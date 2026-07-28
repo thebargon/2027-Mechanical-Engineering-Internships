@@ -1,0 +1,12 @@
+{
+  "name": "mechanical-engineering-internships",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "generate": "bun src/generate.ts"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {}
+}

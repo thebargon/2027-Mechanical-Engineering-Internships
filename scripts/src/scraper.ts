@@ -1,0 +1,460 @@
+import { Job } from "./types";
+import { Company, COMPANIES } from "./companies";
+import { CATEGORIES } from "./config";
+import { KEYWORDS } from "./keywords";
+
+function normalizeText(input: string | null | undefined) {
+  return (input ?? "").toLowerCase();
+}
+
+function matchesKeywords(text: string): boolean {
+  const normalized = normalizeText(text);
+  return KEYWORDS.some((keyword) => normalized.includes(keyword.toLowerCase()));
+}
+
+function matchesTitle(title: string): boolean {
+  const text = normalizeText(title);
+  const blocked = [
+    "software",
+    "frontend",
+    "backend",
+    "full stack",
+    "data science",
+    "machine learning",
+  ];
+
+  if (blocked.some((keyword) => text.includes(keyword))) {
+    return false;
+  }
+
+  return KEYWORDS.some((keyword) => text.includes(keyword.toLowerCase()));
+}
+
+function isInternship(title: string) {
+  const text = normalizeText(title);
+  return (
+    text.includes("intern") ||
+    text.includes("co-op") ||
+    text.includes("coop") ||
+    text.includes("student")
+  );
+}
+
+function getCategory(text: string) {
+  const normalized = normalizeText(text);
+
+  for (const [category, keywords] of Object.entries(CATEGORIES)) {
+    if (keywords.some((keyword) => normalized.includes(keyword.toLowerCase()))) {
+      return category;
+    }
+  }
+
+  return "other";
+}
+
+function scoreJob(title: string): number {
+  const text = normalizeText(title);
+  let score = 0;
+
+  if (text.includes("mechanical")) score += 5;
+  if (text.includes("design")) score += 4;
+  if (text.includes("aerospace")) score += 4;
+  if (text.includes("thermal")) score += 4;
+  if (text.includes("robotics")) score += 4;
+  if (text.includes("manufacturing")) score += 2;
+
+  return score;
+}
+
+function calculateAgeDays(dateString: string | null): number | null {
+  if (!dateString) {
+    return null;
+  }
+
+  const postedAt = new Date(dateString);
+  if (Number.isNaN(postedAt.getTime())) {
+    return null;
+  }
+
+  const now = new Date();
+  const msPerDay = 1000 * 60 * 60 * 24;
+  return Math.round((now.getTime() - postedAt.getTime()) / msPerDay);
+}
+
+async function fetchJson(url: string): Promise<any | null> {
+  try {
+    const response = await fetch(url, {
+      headers: {
+        "User-Agent": "Mozilla/5.0",
+        Accept: "application/json",
+      },
+    });
+
+    if (!response.ok) {
+      return null;
+    }
+
+    return await response.json();
+  } catch {
+    return null;
+  }
+}
+
+async function fetchText(url: string): Promise<string | null> {
+  try {
+    const response = await fetch(url, {
+      headers: {
+        "User-Agent": "Mozilla/5.0",
+        Accept: "text/html",
+      },
+    });
+
+    if (!response.ok) {
+      return null;
+    }
+
+    return await response.text();
+  } catch {
+    return null;
+  }
+}
+
+export async function fetchGreenhouseJobs(company: Company): Promise<Job[]> {
+  const slug = company.greenhouse;
+  if (!slug) {
+    return [];
+  }
+
+  const url = `https://boards.greenhouse.io/api/v1/boards/${slug}/jobs?content=true`;
+  const data = await fetchJson(url);
+  if (!data?.jobs || !Array.isArray(data.jobs)) {
+    return [];
+  }
+
+  return data.jobs
+    .map((job: any) => {
+      const title = job.title ?? "";
+      const description = job.content?.markdown ?? "";
+      const combinedText = `${title} ${description}`;
+
+      if (!matchesKeywords(combinedText) || !isInternship(title)) {
+        return null;
+      }
+
+      const location = job.location?.name ?? null;
+      const rawPostedAt = job.updated_at ?? job.created_at ?? null;
+
+      return {
+        companyName: company.name,
+        companyUrl: `https://boards.greenhouse.io/${slug}`,
+        title,
+        location,
+        url: job.absolute_url ?? "",
+        source: "Greenhouse",
+        postedAt: rawPostedAt,
+        ageDays: calculateAgeDays(rawPostedAt),
+        category: getCategory(combinedText),
+        score: scoreJob(title),
+      } as Job;
+    })
+    .filter((job: Job | null): job is Job => job !== null);
+}
+
+export async function fetchLeverJobs(company: Company): Promise<Job[]> {
+  const slug = company.lever;
+  if (!slug) {
+    return [];
+  }
+
+  const url = `https://api.lever.co/v0/postings/${slug}?mode=json`;
+  const data = await fetchJson(url);
+  if (!Array.isArray(data)) {
+    return [];
+  }
+
+  return data
+    .map((job: any) => {
+      const title = job.text ?? "";
+      const description = job.description ?? "";
+      const combinedText = `${title} ${description}`;
+
+      if (!matchesKeywords(combinedText) || !isInternship(title)) {
+        return null;
+      }
+
+      const location = job.categories?.location ?? null;
+      const postedAt = job.postedAt ?? null;
+
+      return {
+        companyName: company.name,
+        companyUrl: `https://jobs.lever.co/${slug}`,
+        title,
+        location,
+        url: job.hostedUrl ?? "",
+        source: "Lever",
+        postedAt,
+        ageDays: calculateAgeDays(postedAt),
+        category: getCategory(combinedText),
+        score: scoreJob(title),
+      } as Job;
+    })
+    .filter((job: Job | null): job is Job => job !== null);
+}
+
+export async function fetchWorkdayJobs(company: Company): Promise<Job[]> {
+  const tenant = company.workday;
+  if (!tenant) {
+    return [];
+  }
+
+  const apiUrl = `https://${tenant}.wd5.myworkdayjobs.com/wday/cxs/${tenant}/Jobs/jobs`;
+  const data = await fetchJson(apiUrl);
+
+  if (data?.jobPostings && Array.isArray(data.jobPostings)) {
+    return data.jobPostings
+      .map((job: any) => {
+        const title = job.title ?? "";
+        const description = job.description ?? "";
+        const combinedText = `${title} ${description}`;
+
+        if (!matchesTitle(title) || !isInternship(title)) {
+          return null;
+        }
+
+        const locations = Array.isArray(job.locations)
+          ? job.locations.map((loc: any) => loc?.name ?? "").filter(Boolean)
+          : [];
+        const location = locations.length ? locations.join(", ") : null;
+        const jobUrl = job.externalPath
+          ? new URL(job.externalPath, `https://${tenant}.wd5.myworkdayjobs.com`).href
+          : `https://${tenant}.wd5.myworkdayjobs.com/wday/cxs/${tenant}`;
+        const postedAt = job.postedDate ?? job.posted_date ?? job.postedAt ?? null;
+
+        return {
+          companyName: company.name,
+          companyUrl: `https://${tenant}.wd5.myworkdayjobs.com/wday/cxs/${tenant}`,
+          title,
+          location,
+          url: jobUrl,
+          source: "Workday",
+          postedAt,
+          ageDays: calculateAgeDays(postedAt),
+          category: getCategory(combinedText),
+          score: scoreJob(title),
+        } as Job;
+      })
+      .filter((job: Job | null): job is Job => job !== null);
+  }
+
+  const url = `https://${tenant}.wd5.myworkdayjobs.com/wday/cxs/${tenant}/jobs`;
+  const html = await fetchText(url);
+  if (!html) {
+    return [];
+  }
+
+  const jobs: Job[] = [];
+  const regex = new RegExp(`<a[^>]+href=["'](/wday/cxs/${tenant}/job[^"']+)["'][^>]*>([^<]+)<\/a>`, "gi");
+  let match: RegExpExecArray | null;
+
+  while ((match = regex.exec(html))) {
+    const title = match[2]?.trim() ?? "";
+    const combinedText = title;
+
+    if (!matchesTitle(title) || !isInternship(title)) {
+      continue;
+    }
+
+    const section = html.slice(Math.max(0, match.index - 200), match.index + 400);
+    const locationMatch = section.match(/(?:location|job-location|job-locations|data-automation-job-location)[^>]*>([^<]+)</i);
+    const location = locationMatch?.[1]?.trim() ?? null;
+    const jobUrl = new URL(match[1], `https://${tenant}.wd5.myworkdayjobs.com`).href;
+
+    jobs.push({
+      companyName,
+      companyUrl: `https://${tenant}.wd5.myworkdayjobs.com/wday/cxs/${tenant}`,
+      title,
+      location,
+      url: jobUrl,
+      source: "Workday",
+      postedAt: null,
+      ageDays: null,
+      category: getCategory(combinedText),
+      score: scoreJob(title),
+    } as Job);
+  }
+
+  return jobs;
+}
+
+export async function fetchTeslaJobs(): Promise<Job[]> {
+  const url = "https://www.tesla.com/cua-api/apps/careers/state?site=US";
+
+  try {
+    const data = await fetchJson(url);
+    if (!data?.listings || !Array.isArray(data.listings)) {
+      console.log("Tesla API unavailable");
+      return [];
+    }
+
+    const locations = data.lookup?.locations ?? {};
+    const departments = data.lookup?.departments ?? {};
+    const types = data.lookup?.types ?? {};
+
+    return data.listings
+    .map((listing: any) => {
+      const title = listing.t ?? "";
+      const locationCode = listing.l ?? "";
+      const location = locations[locationCode] ?? (locationCode || null);
+      const department = departments[listing.dp] ?? "";
+      const type = types[listing.f] ?? "";
+      const combinedText = `${title} ${department} ${type} ${location}`;
+
+      if (!matchesTitle(title) || !isInternship(title)) {
+        return null;
+      }
+
+      return {
+        companyName: "Tesla",
+        companyUrl: "https://www.tesla.com/careers",
+        title,
+        location,
+        url: "https://www.tesla.com/careers",
+        source: "Tesla Careers",
+        postedAt: null,
+        ageDays: null,
+        category: getCategory(combinedText),
+        score: scoreJob(title),
+      } as Job;
+    })
+    .filter((job: Job | null): job is Job => job !== null);
+  } catch (error) {
+    console.log("Tesla job fetch failed", error);
+    return [];
+  }
+}
+
+export async function fetchSpaceXJobs(): Promise<Job[]> {
+  const url = "https://sxcontent9668.azureedge.us/cms-assets/job_posts_new.json";
+  const data = await fetchJson(url);
+  if (!Array.isArray(data)) {
+    return [];
+  }
+
+  return data
+    .map((job: any) => {
+      const title = job.title ?? "";
+      const description = job.description ?? "";
+      const location = job.location ?? null;
+      const employmentType = job.employementType ?? job.employmentType ?? "";
+      const combinedText = `${title} ${description} ${job.discipline ?? ""} ${job.category ?? ""} ${employmentType}`;
+
+      if (!matchesTitle(title) || !isInternship(title)) {
+        return null;
+      }
+
+      return {
+        companyName: "SpaceX",
+        companyUrl: "https://www.spacex.com/careers",
+        title,
+        location,
+        url: "https://www.spacex.com/careers/jobs",
+        source: "SpaceX Jobs JSON",
+        postedAt: null,
+        ageDays: null,
+        category: getCategory(combinedText),
+        score: scoreJob(title),
+      } as Job;
+    })
+    .filter((job: Job | null): job is Job => job !== null);
+}
+
+export async function fetchRivianJobs(): Promise<Job[]> {
+  const baseUrl = "https://careers.rivian.com/api/jobs";
+  const jobs: Job[] = [];
+  let page = 1;
+  const maxPages = 5;
+
+  while (page <= maxPages) {
+    const url = `${baseUrl}?page=${page}&sortBy=relevance&descending=false&internal=false&keywords=intern&tags2=Rivian%20Automotive&deviceId=undefined&domain=rivian.jibeapply.com`;
+    const data = await fetchJson(url);
+    if (!data?.jobs || !Array.isArray(data.jobs) || data.jobs.length === 0) {
+      break;
+    }
+
+    for (const item of data.jobs) {
+      const jobData = item?.data;
+      if (!jobData) {
+        continue;
+      }
+
+      const title = jobData.title ?? "";
+      const description = jobData.description ?? "";
+      const location = jobData.full_location ?? jobData.location_name ?? jobData.location ?? null;
+      const combinedText = `${title} ${description} ${jobData.category ?? ""} ${jobData.tags1 ?? ""} ${jobData.tags2 ?? ""}`;
+
+      if (!matchesTitle(title) || !isInternship(title)) {
+        continue;
+      }
+
+      const urlCandidate = jobData.apply_url ?? jobData.applicationUrl ?? jobData.externalUrl ?? jobData.url ?? `https://careers.rivian.com/careers-home/jobs`;
+      const postedAt = jobData.posted_date ?? jobData.create_date ?? jobData.update_date ?? null;
+
+      jobs.push({
+        companyName: "Rivian",
+        companyUrl: "https://careers.rivian.com/careers-home/jobs",
+        title,
+        location,
+        url: urlCandidate,
+        source: "Rivian Careers API",
+        postedAt,
+        ageDays: calculateAgeDays(postedAt),
+        category: getCategory(combinedText),
+        score: scoreJob(title),
+      });
+    }
+
+    if (data.jobs.length < 10) {
+      break;
+    }
+
+    page += 1;
+  }
+
+  return jobs;
+}
+
+async function fetchCompanyJobs(company: Company): Promise<Job[]> {
+  const greenhouseJobs = await fetchGreenhouseJobs(company);
+  const leverJobs = await fetchLeverJobs(company);
+  const workdayJobs = await fetchWorkdayJobs(company);
+  const teslaJobs = company.custom === "tesla" ? await fetchTeslaJobs() : [];
+  const spacexJobs = company.custom === "spacex" ? await fetchSpaceXJobs() : [];
+  const rivianJobs = company.custom === "rivian" ? await fetchRivianJobs() : [];
+
+  console.log(
+    company.name,
+    greenhouseJobs.length,
+    leverJobs.length,
+    workdayJobs.length,
+    teslaJobs.length,
+    spacexJobs.length,
+    rivianJobs.length,
+  );
+
+  return [
+    ...greenhouseJobs,
+    ...leverJobs,
+    ...workdayJobs,
+    ...teslaJobs,
+    ...spacexJobs,
+    ...rivianJobs,
+  ];
+}
+
+export async function getJobs(): Promise<Job[]> {
+  const jobs = await Promise.all(
+    COMPANIES.map((company) => fetchCompanyJobs(company)),
+  );
+
+  return jobs.flat();
+}
