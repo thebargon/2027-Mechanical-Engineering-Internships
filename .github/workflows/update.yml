@@ -1,5 +1,8 @@
 name: Update Mechanical Engineering Internships
 
+permissions:
+  contents: write
+
 on:
   schedule:
     - cron: '0 12 * * *'
