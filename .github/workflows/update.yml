@@ -3,6 +3,10 @@ name: Update Mechanical Engineering Internships
 permissions:
   contents: write
 
+concurrency:
+  group: update-me-internships
+  cancel-in-progress: true
+
 on:
   schedule:
     - cron: '0 12 * * *'
@@ -36,7 +40,6 @@ jobs:
 
       - name: Push changes
         if: success()
-        uses: ad-m/github-push-action@v0.8.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
+        run: |
+          git pull --rebase origin main
+          git push origin main
