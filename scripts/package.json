@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "generate": "bun src/generate.ts"
+    "generate": "bun src/generate.ts",
+    "discover-ats": "bun src/ats-discovery.ts",
+    "apply-ats-suggestions": "bun src/apply-ats-suggestions.ts"
   },
   "devDependencies": {
     "typescript": "^5.9.3"

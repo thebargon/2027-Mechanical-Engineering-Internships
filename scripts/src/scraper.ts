@@ -286,6 +286,86 @@ export async function fetchWorkdayJobs(company: Company): Promise<Job[]> {
   return jobs;
 }
 
+export async function fetchICIMSJobs(company: Company): Promise<Job[]> {
+  const tenant = company.icims;
+  if (!tenant) return [];
+
+  const base = `https://${tenant}.icims.com`;
+  const url = `${base}/jobs`;
+  const html = await fetchText(url);
+  if (!html) return [];
+
+  const jobs: Job[] = [];
+
+  // Try to parse JSON-LD JobPosting blocks first
+  const ldJsonRegex = /<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi;
+  let ldMatch: RegExpExecArray | null;
+  while ((ldMatch = ldJsonRegex.exec(html))) {
+    try {
+      const parsed = JSON.parse(ldMatch[1]);
+      const postings = Array.isArray(parsed) ? parsed : [parsed];
+      for (const p of postings) {
+        if (!p || (p['@type'] !== 'JobPosting' && p['@type'] !== 'jobPosting')) continue;
+
+        const title = p.title ?? p.name ?? '';
+        const description = (p.description as string) ?? '';
+        const combined = `${title} ${description}`;
+
+        if (!matchesKeywords(combined) || !isInternship(title)) continue;
+
+        const jobUrl = p.url ? new URL(p.url, base).href : url;
+        const postedAt = p.datePosted ?? null;
+
+        jobs.push({
+          companyName: company.name,
+          companyUrl: base,
+          title,
+          location: p.jobLocation?.address?.addressLocality ?? null,
+          url: jobUrl,
+          source: 'iCIMS',
+          postedAt,
+          ageDays: calculateAgeDays(postedAt),
+          category: getCategory(combined),
+          score: scoreJob(title),
+        } as Job);
+      }
+    } catch {
+      // ignore JSON parse errors
+    }
+  }
+
+  if (jobs.length > 0) return jobs;
+
+  // Fallback: find anchor tags that look like job links
+  const anchorRegex = /<a[^>]+href=["']([^"']*\/job[^"']*)["'][^>]*>([^<]+)<\/a>/gi;
+  let match: RegExpExecArray | null;
+  while ((match = anchorRegex.exec(html))) {
+    try {
+      const href = match[1];
+      const title = match[2].trim();
+      if (!isInternship(title) || !matchesKeywords(title)) continue;
+
+      const jobUrl = new URL(href, base).href;
+      jobs.push({
+        companyName: company.name,
+        companyUrl: base,
+        title,
+        location: null,
+        url: jobUrl,
+        source: 'iCIMS',
+        postedAt: null,
+        ageDays: null,
+        category: getCategory(title),
+        score: scoreJob(title),
+      } as Job);
+    } catch {
+      continue;
+    }
+  }
+
+  return jobs;
+}
+
 export async function fetchTeslaJobs(): Promise<Job[]> {
   const url = "https://www.tesla.com/cua-api/apps/careers/state?site=US";
 
@@ -427,6 +507,7 @@ async function fetchCompanyJobs(company: Company): Promise<Job[]> {
   const greenhouseJobs = await fetchGreenhouseJobs(company);
   const leverJobs = await fetchLeverJobs(company);
   const workdayJobs = await fetchWorkdayJobs(company);
+  const icimsJobs = await fetchICIMSJobs(company);
   const teslaJobs = company.custom === "tesla" ? await fetchTeslaJobs() : [];
   const spacexJobs = company.custom === "spacex" ? await fetchSpaceXJobs() : [];
   const rivianJobs = company.custom === "rivian" ? await fetchRivianJobs() : [];
@@ -436,6 +517,7 @@ async function fetchCompanyJobs(company: Company): Promise<Job[]> {
     greenhouseJobs.length,
     leverJobs.length,
     workdayJobs.length,
+    icimsJobs.length,
     teslaJobs.length,
     spacexJobs.length,
     rivianJobs.length,
@@ -445,6 +527,7 @@ async function fetchCompanyJobs(company: Company): Promise<Job[]> {
     ...greenhouseJobs,
     ...leverJobs,
     ...workdayJobs,
+    ...icimsJobs,
     ...teslaJobs,
     ...spacexJobs,
     ...rivianJobs,
