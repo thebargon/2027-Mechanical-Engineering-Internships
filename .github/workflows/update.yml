@@ -41,5 +41,10 @@ jobs:
       - name: Push changes
         if: success()
         run: |
-          git pull --no-rebase origin main
+          git fetch origin
+          git merge origin/main --no-edit || true
+          if ! git diff --quiet; then
+            git add .
+            git commit -m "chore: resolve merge conflicts" || true
+          fi
           git push origin main
