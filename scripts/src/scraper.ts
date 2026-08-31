@@ -270,7 +270,7 @@ export async function fetchWorkdayJobs(company: Company): Promise<Job[]> {
     const jobUrl = new URL(match[1], `https://${tenant}.wd5.myworkdayjobs.com`).href;
 
     jobs.push({
-      companyName,
+      companyName: company.name,
       companyUrl: `https://${tenant}.wd5.myworkdayjobs.com/wday/cxs/${tenant}`,
       title,
       location,
@@ -503,11 +503,117 @@ export async function fetchRivianJobs(): Promise<Job[]> {
   return jobs;
 }
 
+export async function fetchRiplingJobs(company: Company): Promise<Job[]> {
+  const slug = company.name.toLowerCase().replace(/\s+/g, "-");
+  const url = `https://ats.rippling.com/${slug}/jobs`;
+  const html = await fetchText(url);
+  if (!html) {
+    return [];
+  }
+
+  const jobs: Job[] = [];
+
+  // Rippling typically embeds job data in JSON-LD format
+  const ldJsonRegex = /<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi;
+  let ldMatch: RegExpExecArray | null;
+  while ((ldMatch = ldJsonRegex.exec(html))) {
+    try {
+      const parsed = JSON.parse(ldMatch[1]);
+      const postings = Array.isArray(parsed) ? parsed : [parsed];
+      for (const p of postings) {
+        if (!p || (p['@type'] !== 'JobPosting' && p['@type'] !== 'jobPosting')) continue;
+
+        const title = p.title ?? p.name ?? '';
+        const description = (p.description as string) ?? '';
+        const combined = `${title} ${description}`;
+
+        if (!matchesKeywords(combined) || !isInternship(title)) continue;
+
+        const jobUrl = p.url ?? url;
+        const postedAt = p.datePosted ?? null;
+
+        jobs.push({
+          companyName: company.name,
+          companyUrl: url,
+          title,
+          location: p.jobLocation?.address?.addressLocality ?? null,
+          url: jobUrl,
+          source: 'Rippling',
+          postedAt,
+          ageDays: calculateAgeDays(postedAt),
+          category: getCategory(combined),
+          score: scoreJob(title),
+        } as Job);
+      }
+    } catch {
+      // ignore JSON parse errors
+    }
+  }
+
+  return jobs;
+}
+
+export async function fetchPhenomJobs(company: Company): Promise<Job[]> {
+  const slug = company.phenom;
+  if (!slug) {
+    return [];
+  }
+
+  const url = `https://careers.rtx.com/us/en/search-results?keywords=intern`;
+  const html = await fetchText(url);
+  if (!html) {
+    return [];
+  }
+
+  const jobs: Job[] = [];
+
+  // Try to extract JSON-LD JobPosting blocks
+  const ldJsonRegex = /<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi;
+  let ldMatch: RegExpExecArray | null;
+  while ((ldMatch = ldJsonRegex.exec(html))) {
+    try {
+      const parsed = JSON.parse(ldMatch[1]);
+      const postings = Array.isArray(parsed) ? parsed : [parsed];
+      for (const p of postings) {
+        if (!p || (p['@type'] !== 'JobPosting' && p['@type'] !== 'jobPosting')) continue;
+
+        const title = p.title ?? p.name ?? '';
+        const description = (p.description as string) ?? '';
+        const combined = `${title} ${description}`;
+
+        if (!matchesKeywords(combined) || !isInternship(title)) continue;
+
+        const jobUrl = p.url ?? url;
+        const postedAt = p.datePosted ?? null;
+
+        jobs.push({
+          companyName: company.name,
+          companyUrl: url,
+          title,
+          location: p.jobLocation?.address?.addressLocality ?? null,
+          url: jobUrl,
+          source: 'PhenomPeople',
+          postedAt,
+          ageDays: calculateAgeDays(postedAt),
+          category: getCategory(combined),
+          score: scoreJob(title),
+        } as Job);
+      }
+    } catch {
+      // ignore JSON parse errors
+    }
+  }
+
+  return jobs;
+}
+
 async function fetchCompanyJobs(company: Company): Promise<Job[]> {
   const greenhouseJobs = await fetchGreenhouseJobs(company);
   const leverJobs = await fetchLeverJobs(company);
   const workdayJobs = await fetchWorkdayJobs(company);
   const icimsJobs = await fetchICIMSJobs(company);
+  const phenomJobs = await fetchPhenomJobs(company);
+  const riplingJobs = company.custom === "rippling" ? await fetchRiplingJobs(company) : [];
   const teslaJobs = company.custom === "tesla" ? await fetchTeslaJobs() : [];
   const spacexJobs = company.custom === "spacex" ? await fetchSpaceXJobs() : [];
   const rivianJobs = company.custom === "rivian" ? await fetchRivianJobs() : [];
@@ -518,6 +624,8 @@ async function fetchCompanyJobs(company: Company): Promise<Job[]> {
     leverJobs.length,
     workdayJobs.length,
     icimsJobs.length,
+    phenomJobs.length,
+    riplingJobs.length,
     teslaJobs.length,
     spacexJobs.length,
     rivianJobs.length,
@@ -528,6 +636,8 @@ async function fetchCompanyJobs(company: Company): Promise<Job[]> {
     ...leverJobs,
     ...workdayJobs,
     ...icimsJobs,
+    ...phenomJobs,
+    ...riplingJobs,
     ...teslaJobs,
     ...spacexJobs,
     ...rivianJobs,
