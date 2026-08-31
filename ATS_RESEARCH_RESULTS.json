@@ -1,0 +1,82 @@
+[
+  {
+    "companyName": "Moog",
+    "platform": "workday",
+    "slug": "moog.wd5",
+    "careersUrl": "https://moog.wd5.myworkdayjobs.com/MOOG_External_Career_Site",
+    "confidence": "high",
+    "notes": "Browser access confirmed - Workday URL structure confirmed with 433 active jobs"
+  },
+  {
+    "companyName": "Raytheon Technologies (RTX)",
+    "platform": "workday",
+    "slug": "rtx.wd1",
+    "careersUrl": "https://rtx.wd1.myworkdayjobs.com/",
+    "confidence": "high",
+    "notes": "Browser access confirmed - wd1 Workday tenant (separate from wd5 group)"
+  },
+  {
+    "companyName": "Pratt & Whitney (RTX subsidiary)",
+    "platform": "workday",
+    "slug": "pratt-whitney.wd5",
+    "careersUrl": "https://pratt-whitney.wd5.myworkdayjobs.com/",
+    "confidence": "high",
+    "notes": "DNS confirmed via 406 response - shares wd5 tenant with other defense contractors"
+  },
+  {
+    "companyName": "BAE Systems",
+    "platform": "workday",
+    "slug": "baesystems.wd5",
+    "careersUrl": "https://baesystems.wd5.myworkdayjobs.com/",
+    "confidence": "high",
+    "notes": "DNS confirmed via 406 response - Workday wd5 tenant"
+  },
+  {
+    "companyName": "Rolls-Royce",
+    "platform": "workday",
+    "slug": "rollsroyce.wd5",
+    "careersUrl": "https://careers.rolls-royce.com/en",
+    "confidence": "high",
+    "notes": "Custom careers portal with Workday backend - CSP headers reference rrworkday-prod-api.connectid.cloud"
+  },
+  {
+    "companyName": "L3Harris Technologies",
+    "platform": "taleo",
+    "slug": "l3harris",
+    "careersUrl": "https://careers.l3harris.com/en",
+    "confidence": "high",
+    "notes": "TalentBrew portal (Taleo-based) confirmed via page source - uses tbcdn.talentbrew.com CDN"
+  },
+  {
+    "companyName": "Spirit AeroSystems",
+    "platform": "icims",
+    "slug": "fllapscareers1-spirit",
+    "careersUrl": "https://careers.spirit.com/careers-home/",
+    "confidence": "high",
+    "notes": "iCIMS platform confirmed in login link: fllapscareers1-spirit.icims.com"
+  },
+  {
+    "companyName": "Parker Hannifin",
+    "platform": "workday",
+    "slug": "parkerhannifin.wd5",
+    "careersUrl": "https://parkerhannifin.wd5.myworkdayjobs.com/",
+    "confidence": "high",
+    "notes": "DNS confirmed via 406 response - Workday wd5 tenant"
+  },
+  {
+    "companyName": "Eaton",
+    "platform": "workday",
+    "slug": "eaton.wd5",
+    "careersUrl": "https://eaton.wd5.myworkdayjobs.com/",
+    "confidence": "high",
+    "notes": "DNS confirmed via 406 response - Workday wd5 tenant"
+  },
+  {
+    "companyName": "Schneider Electric",
+    "platform": "workday",
+    "slug": "schneider-electric.wd5",
+    "careersUrl": "https://schneider-electric.wd5.myworkdayjobs.com/",
+    "confidence": "high",
+    "notes": "DNS confirmed via 406 response - Workday wd5 tenant"
+  }
+]

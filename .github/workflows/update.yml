@@ -42,9 +42,11 @@ jobs:
         if: success()
         run: |
           git fetch origin
-          git merge origin/main --no-edit || true
-          if ! git diff --quiet; then
-            git add .
-            git commit -m "chore: resolve merge conflicts" || true
-          fi
+          git pull origin main || true
+          # Regenerate to resolve any conflicts
+          cd scripts
+          bun run generate
+          cd ..
+          git add .
+          git commit -m "chore: update mechanical engineering internships" || true
           git push origin main
