@@ -41,9 +41,8 @@ jobs:
       - name: Push changes
         if: success()
         run: |
-          git config pull.rebase false
           git fetch origin
-          git pull origin main || git checkout --theirs README.md
+          git pull origin main --no-rebase || git checkout --theirs README.md
           # Regenerate to resolve any conflicts
           cd scripts
           bun run generate
