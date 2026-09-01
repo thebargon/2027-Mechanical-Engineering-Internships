@@ -37,7 +37,7 @@ export const COMPANIES: Company[] = [
   { name: "Polaris" },
   { name: "Whirlpool" },
   { name: "Dyson" },
-  { name: "3M" },
+  { name: "3M", workday: "3m", priority: 4 },
   { name: "Johnson Controls" },
   { name: "Anduril", greenhouse: "andurilindustries", priority: 5 },
   { name: "Apple", priority: 5 },
