@@ -42,7 +42,7 @@ jobs:
         if: success()
         run: |
           git fetch origin
-          git pull origin main || true
+          git pull origin main || git checkout --theirs README.md
           # Regenerate to resolve any conflicts
           cd scripts
           bun run generate
