@@ -85,17 +85,21 @@ async function fetchJson(url: string): Promise<any | null> {
   try {
     const response = await fetch(url, {
       headers: {
-        "User-Agent": "Mozilla/5.0",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
         Accept: "application/json",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Accept-Encoding": "gzip, deflate, br",
       },
     });
 
     if (!response.ok) {
+      // console.log(`[API] ${url} returned ${response.status}`);
       return null;
     }
 
     return await response.json();
-  } catch {
+  } catch (err) {
+    // console.log(`[API Error] ${url}:`, err instanceof Error ? err.message : String(err));
     return null;
   }
 }
@@ -104,8 +108,10 @@ async function fetchText(url: string): Promise<string | null> {
   try {
     const response = await fetch(url, {
       headers: {
-        "User-Agent": "Mozilla/5.0",
-        Accept: "text/html",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Accept-Encoding": "gzip, deflate, br",
       },
     });
 
@@ -207,83 +213,95 @@ export async function fetchWorkdayJobs(company: Company): Promise<Job[]> {
     return [];
   }
 
-  const apiUrl = `https://${tenant}.wd5.myworkdayjobs.com/wday/cxs/${tenant}/Jobs/jobs`;
-  const data = await fetchJson(apiUrl);
+  // Try both wd5 (default) and wd1 endpoints
+  const workdayVersions = [
+    `https://${tenant}.wd5.myworkdayjobs.com`,
+    `https://${tenant}.wd1.myworkdayjobs.com`,
+  ];
 
-  if (data?.jobPostings && Array.isArray(data.jobPostings)) {
-    return data.jobPostings
-      .map((job: any) => {
-        const title = job.title ?? "";
-        const description = job.description ?? "";
-        const combinedText = `${title} ${description}`;
+  for (const baseUrl of workdayVersions) {
+    // Try JSON API endpoint first
+    const apiUrl = `${baseUrl}/wday/cxs/${tenant}/jobs`;
+    const data = await fetchJson(apiUrl);
+
+    if (data?.jobPostings && Array.isArray(data.jobPostings)) {
+      return data.jobPostings
+        .map((job: any) => {
+          const title = job.title ?? "";
+          const description = job.description ?? "";
+          const combinedText = `${title} ${description}`;
+
+          if (!matchesTitle(title) || !isInternship(title)) {
+            return null;
+          }
+
+          const locations = Array.isArray(job.locations)
+            ? job.locations.map((loc: any) => loc?.name ?? "").filter(Boolean)
+            : [];
+          const location = locations.length ? locations.join(", ") : null;
+          const jobUrl = job.externalPath
+            ? new URL(job.externalPath, baseUrl).href
+            : `${baseUrl}/wday/cxs/${tenant}/jobs`;
+          const postedAt = job.postedDate ?? job.posted_date ?? job.postedAt ?? null;
+
+          return {
+            companyName: company.name,
+            companyUrl: `${baseUrl}/wday/cxs/${tenant}`,
+            title,
+            location,
+            url: jobUrl,
+            source: "Workday",
+            postedAt,
+            ageDays: calculateAgeDays(postedAt),
+            category: getCategory(combinedText),
+            score: scoreJob(title),
+          } as Job;
+        })
+        .filter((job: Job | null): job is Job => job !== null);
+    }
+
+    // Try HTML scraping as fallback
+    const htmlUrl = `${baseUrl}/wday/cxs/${tenant}/jobs`;
+    const html = await fetchText(htmlUrl);
+    if (html) {
+      const jobs: Job[] = [];
+      const regex = new RegExp(`<a[^>]+href=["'](/wday/cxs/${tenant}/job[^"']+)["'][^>]*>([^<]+)<\/a>`, "gi");
+      let match: RegExpExecArray | null;
+
+      while ((match = regex.exec(html))) {
+        const title = match[2]?.trim() ?? "";
+        const combinedText = title;
 
         if (!matchesTitle(title) || !isInternship(title)) {
-          return null;
+          continue;
         }
 
-        const locations = Array.isArray(job.locations)
-          ? job.locations.map((loc: any) => loc?.name ?? "").filter(Boolean)
-          : [];
-        const location = locations.length ? locations.join(", ") : null;
-        const jobUrl = job.externalPath
-          ? new URL(job.externalPath, `https://${tenant}.wd5.myworkdayjobs.com`).href
-          : `https://${tenant}.wd5.myworkdayjobs.com/wday/cxs/${tenant}`;
-        const postedAt = job.postedDate ?? job.posted_date ?? job.postedAt ?? null;
+        const section = html.slice(Math.max(0, match.index - 200), match.index + 400);
+        const locationMatch = section.match(/(?:location|job-location|job-locations|data-automation-job-location)[^>]*>([^<]+)</i);
+        const location = locationMatch?.[1]?.trim() ?? null;
+        const jobUrl = new URL(match[1], baseUrl).href;
 
-        return {
+        jobs.push({
           companyName: company.name,
-          companyUrl: `https://${tenant}.wd5.myworkdayjobs.com/wday/cxs/${tenant}`,
+          companyUrl: `${baseUrl}/wday/cxs/${tenant}`,
           title,
           location,
           url: jobUrl,
           source: "Workday",
-          postedAt,
-          ageDays: calculateAgeDays(postedAt),
+          postedAt: null,
+          ageDays: null,
           category: getCategory(combinedText),
           score: scoreJob(title),
-        } as Job;
-      })
-      .filter((job: Job | null): job is Job => job !== null);
-  }
+        } as Job);
+      }
 
-  const url = `https://${tenant}.wd5.myworkdayjobs.com/wday/cxs/${tenant}/jobs`;
-  const html = await fetchText(url);
-  if (!html) {
-    return [];
-  }
-
-  const jobs: Job[] = [];
-  const regex = new RegExp(`<a[^>]+href=["'](/wday/cxs/${tenant}/job[^"']+)["'][^>]*>([^<]+)<\/a>`, "gi");
-  let match: RegExpExecArray | null;
-
-  while ((match = regex.exec(html))) {
-    const title = match[2]?.trim() ?? "";
-    const combinedText = title;
-
-    if (!matchesTitle(title) || !isInternship(title)) {
-      continue;
+      if (jobs.length > 0) {
+        return jobs;
+      }
     }
-
-    const section = html.slice(Math.max(0, match.index - 200), match.index + 400);
-    const locationMatch = section.match(/(?:location|job-location|job-locations|data-automation-job-location)[^>]*>([^<]+)</i);
-    const location = locationMatch?.[1]?.trim() ?? null;
-    const jobUrl = new URL(match[1], `https://${tenant}.wd5.myworkdayjobs.com`).href;
-
-    jobs.push({
-      companyName: company.name,
-      companyUrl: `https://${tenant}.wd5.myworkdayjobs.com/wday/cxs/${tenant}`,
-      title,
-      location,
-      url: jobUrl,
-      source: "Workday",
-      postedAt: null,
-      ageDays: null,
-      category: getCategory(combinedText),
-      score: scoreJob(title),
-    } as Job);
   }
 
-  return jobs;
+  return [];
 }
 
 export async function fetchICIMSJobs(company: Company): Promise<Job[]> {
