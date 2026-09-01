@@ -17,7 +17,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v6
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
@@ -30,15 +33,18 @@ jobs:
         run: bun run generate
         working-directory: scripts
 
-      - name: Commit changes
-        if: success()
+      - name: Commit and push changes
         run: |
-          git config --local user.name "${{ github.actor }}"
-          git config --local user.email "${{ github.actor }}@users.noreply.github.com"
-          git add README.md
-          git diff --staged --quiet || git commit -m "chore: update mechanical engineering internships"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - name: Push changes
-        if: success()
-        run: |
-          git push origin main
+          git add README.md
+
+          if git diff --cached --quiet; then
+            echo "No changes to README.md"
+            exit 0
+          fi
+
+          git commit -m "chore: update mechanical engineering internships"
+
+          git push origin HEAD:main
