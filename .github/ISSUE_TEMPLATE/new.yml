@@ -1,77 +1,39 @@
-name: New Position
-description: Add a new grad or intern job position.
-title: "New Position"
-labels: ["new"]
+name: Missing internship
+description: Suggest a mechanical engineering or related hardware internship.
+title: "[Listing] "
 body:
   - type: markdown
     attributes:
-      value: |
-        ## New SWE Position Form
-        
-        To contribute to the job lists, fill out the form below. We **ONLY** accept Software Engineering roles for internships or new college graduates.
-
-        We appreciate your contribution.
+      value: Include public job information only. We track internships and co-ops, not software-only or full-time roles.
   - type: input
-    id: job_title
+    id: company
     attributes:
-      label: Position Title
-      placeholder: e.g. New Grad Software Engineer
+      label: Company
     validations:
       required: true
   - type: input
-    id: job_url
+    id: title
     attributes:
-      label: Position Application Link
-      placeholder: e.g. https://company.com/posting
+      label: Job title
+      placeholder: Mechanical Engineering Intern - Summer 2027
     validations:
       required: true
   - type: input
-    id: company_name
+    id: url
     attributes:
-      label: Company Name
-      placeholder: e.g. Amazon
-    validations:
-      required: true
-  - type: input
-    id: company_url
-    attributes:
-      label: Company Link
-      placeholder: e.g. https://amazon.com
+      label: Direct employer job-description URL
     validations:
       required: true
   - type: input
     id: location
     attributes:
       label: Location
-      placeholder: e.g. San Franciso, CA
-    validations:
-      required: true
-  - type: dropdown
-    id: job_type
-    attributes:
-      label: Is this a new grad position or an internship?
-      multiple: false
-      options:
-        - New Grad
-        - Internship
-    validations:
-      required: true
-  - type: dropdown
-    id: usa
-    attributes:
-      label: Is this position based in the USA?
-      multiple: false
-      options:
-        - No, it's international.
-        - Yes, it's based in the USA.
     validations:
       required: true
   - type: input
-    id: github
+    id: term
     attributes:
-      label: Your GitHub Email
-      description: |
-        (Optional) Include your GitHub email here if you would like the credit for this contribution when the job is added to our lists.
-      placeholder: e.g. bot@speedyapply.com
+      label: Internship term
+      description: Enter the term stated by the employer, or Unknown. Do not infer it from the posting date.
     validations:
-      required: false
+      required: true

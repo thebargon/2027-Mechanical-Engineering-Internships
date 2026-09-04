@@ -1,55 +1,11 @@
 import { Job } from "./types";
 import { Company, COMPANIES } from "./companies";
-import { CATEGORIES } from "./config";
-import { KEYWORDS } from "./keywords";
+import { request, requestContext, mapLimited } from "./http";
+import type { SourceHealth } from "./history";
+import { isMechanicalInternship, getCategory } from "./filters";
 
 function normalizeText(input: string | null | undefined) {
   return (input ?? "").toLowerCase();
-}
-
-function matchesKeywords(text: string): boolean {
-  const normalized = normalizeText(text);
-  return KEYWORDS.some((keyword) => normalized.includes(keyword.toLowerCase()));
-}
-
-function matchesTitle(title: string): boolean {
-  const text = normalizeText(title);
-  const blocked = [
-    "software",
-    "frontend",
-    "backend",
-    "full stack",
-    "data science",
-    "machine learning",
-  ];
-
-  if (blocked.some((keyword) => text.includes(keyword))) {
-    return false;
-  }
-
-  return KEYWORDS.some((keyword) => text.includes(keyword.toLowerCase()));
-}
-
-function isInternship(title: string) {
-  const text = normalizeText(title);
-  return (
-    text.includes("intern") ||
-    text.includes("co-op") ||
-    text.includes("coop") ||
-    text.includes("student")
-  );
-}
-
-function getCategory(text: string) {
-  const normalized = normalizeText(text);
-
-  for (const [category, keywords] of Object.entries(CATEGORIES)) {
-    if (keywords.some((keyword) => normalized.includes(keyword.toLowerCase()))) {
-      return category;
-    }
-  }
-
-  return "other";
 }
 
 function scoreJob(title: string): number {
@@ -81,49 +37,8 @@ function calculateAgeDays(dateString: string | null): number | null {
   return Math.round((now.getTime() - postedAt.getTime()) / msPerDay);
 }
 
-async function fetchJson(url: string): Promise<any | null> {
-  try {
-    const response = await fetch(url, {
-      headers: {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-        Accept: "application/json",
-        "Accept-Language": "en-US,en;q=0.9",
-        "Accept-Encoding": "gzip, deflate, br",
-      },
-    });
-
-    if (!response.ok) {
-      // console.log(`[API] ${url} returned ${response.status}`);
-      return null;
-    }
-
-    return await response.json();
-  } catch (err) {
-    // console.log(`[API Error] ${url}:`, err instanceof Error ? err.message : String(err));
-    return null;
-  }
-}
-
-async function fetchText(url: string): Promise<string | null> {
-  try {
-    const response = await fetch(url, {
-      headers: {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-        Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-        "Accept-Language": "en-US,en;q=0.9",
-        "Accept-Encoding": "gzip, deflate, br",
-      },
-    });
-
-    if (!response.ok) {
-      return null;
-    }
-
-    return await response.text();
-  } catch {
-    return null;
-  }
-}
+const fetchJson = (url: string) => request(url, "json");
+const fetchText = (url: string) => request(url, "text");
 
 export async function fetchGreenhouseJobs(company: Company): Promise<Job[]> {
   const slug = company.greenhouse;
@@ -131,24 +46,28 @@ export async function fetchGreenhouseJobs(company: Company): Promise<Job[]> {
     return [];
   }
 
-  const url = `https://boards.greenhouse.io/api/v1/boards/${slug}/jobs?content=true`;
+  // Public Job Board API: https://docs.greenhouse.io/job-board.html
+  const url = `https://boards-api.greenhouse.io/v1/boards/${slug}/jobs?content=true`;
   const data = await fetchJson(url);
   if (!data?.jobs || !Array.isArray(data.jobs)) {
-    return [];
+    throw new Error("Invalid Greenhouse response");
+  }
+  if (!data.jobs.every((job: any) => typeof job?.title === "string" && typeof job?.absolute_url === "string")) {
+    throw new Error("Malformed Greenhouse job");
   }
 
   return data.jobs
     .map((job: any) => {
       const title = job.title ?? "";
-      const description = job.content?.markdown ?? "";
+      const description = typeof job.content === "string" ? job.content : job.content?.markdown ?? "";
       const combinedText = `${title} ${description}`;
 
-      if (!matchesKeywords(combinedText) || !isInternship(title)) {
+      if (!isMechanicalInternship(title)) {
         return null;
       }
 
       const location = job.location?.name ?? null;
-      const rawPostedAt = job.updated_at ?? job.created_at ?? null;
+      const rawPostedAt = job.created_at ?? null;
 
       return {
         companyName: company.name,
@@ -159,7 +78,7 @@ export async function fetchGreenhouseJobs(company: Company): Promise<Job[]> {
         source: "Greenhouse",
         postedAt: rawPostedAt,
         ageDays: calculateAgeDays(rawPostedAt),
-        category: getCategory(combinedText),
+        category: getCategory(title) !== "other" ? getCategory(title) : getCategory(combinedText),
         score: scoreJob(title),
       } as Job;
     })
@@ -175,7 +94,10 @@ export async function fetchLeverJobs(company: Company): Promise<Job[]> {
   const url = `https://api.lever.co/v0/postings/${slug}?mode=json`;
   const data = await fetchJson(url);
   if (!Array.isArray(data)) {
-    return [];
+    throw new Error("Invalid Lever response");
+  }
+  if (!data.every((job: any) => typeof job?.text === "string" && typeof job?.hostedUrl === "string")) {
+    throw new Error("Malformed Lever job");
   }
 
   return data
@@ -184,12 +106,12 @@ export async function fetchLeverJobs(company: Company): Promise<Job[]> {
       const description = job.description ?? "";
       const combinedText = `${title} ${description}`;
 
-      if (!matchesKeywords(combinedText) || !isInternship(title)) {
+      if (!isMechanicalInternship(title)) {
         return null;
       }
 
       const location = job.categories?.location ?? null;
-      const postedAt = job.postedAt ?? null;
+      const postedAt = job.createdAt ? new Date(job.createdAt).toISOString() : job.postedAt ?? null;
 
       return {
         companyName: company.name,
@@ -200,7 +122,7 @@ export async function fetchLeverJobs(company: Company): Promise<Job[]> {
         source: "Lever",
         postedAt,
         ageDays: calculateAgeDays(postedAt),
-        category: getCategory(combinedText),
+        category: getCategory(title) !== "other" ? getCategory(title) : getCategory(combinedText),
         score: scoreJob(title),
       } as Job;
     })
@@ -231,7 +153,7 @@ export async function fetchWorkdayJobs(company: Company): Promise<Job[]> {
           const description = job.description ?? "";
           const combinedText = `${title} ${description}`;
 
-          if (!matchesTitle(title) || !isInternship(title)) {
+          if (!isMechanicalInternship(title)) {
             return null;
           }
 
@@ -253,7 +175,7 @@ export async function fetchWorkdayJobs(company: Company): Promise<Job[]> {
             source: "Workday",
             postedAt,
             ageDays: calculateAgeDays(postedAt),
-            category: getCategory(combinedText),
+            category: getCategory(title) !== "other" ? getCategory(title) : getCategory(combinedText),
             score: scoreJob(title),
           } as Job;
         })
@@ -272,7 +194,7 @@ export async function fetchWorkdayJobs(company: Company): Promise<Job[]> {
         const title = match[2]?.trim() ?? "";
         const combinedText = title;
 
-        if (!matchesTitle(title) || !isInternship(title)) {
+        if (!isMechanicalInternship(title)) {
           continue;
         }
 
@@ -290,7 +212,7 @@ export async function fetchWorkdayJobs(company: Company): Promise<Job[]> {
           source: "Workday",
           postedAt: null,
           ageDays: null,
-          category: getCategory(combinedText),
+          category: getCategory(title) !== "other" ? getCategory(title) : getCategory(combinedText),
           score: scoreJob(title),
         } as Job);
       }
@@ -329,7 +251,7 @@ export async function fetchICIMSJobs(company: Company): Promise<Job[]> {
         const description = (p.description as string) ?? '';
         const combined = `${title} ${description}`;
 
-        if (!matchesKeywords(combined) || !isInternship(title)) continue;
+        if (!isMechanicalInternship(title)) continue;
 
         const jobUrl = p.url ? new URL(p.url, base).href : url;
         const postedAt = p.datePosted ?? null;
@@ -343,7 +265,7 @@ export async function fetchICIMSJobs(company: Company): Promise<Job[]> {
           source: 'iCIMS',
           postedAt,
           ageDays: calculateAgeDays(postedAt),
-          category: getCategory(combined),
+          category: getCategory(title) !== "other" ? getCategory(title) : getCategory(combined),
           score: scoreJob(title),
         } as Job);
       }
@@ -361,7 +283,7 @@ export async function fetchICIMSJobs(company: Company): Promise<Job[]> {
     try {
       const href = match[1];
       const title = match[2].trim();
-      if (!isInternship(title) || !matchesKeywords(title)) continue;
+      if (!isMechanicalInternship(title)) continue;
 
       const jobUrl = new URL(href, base).href;
       jobs.push({
@@ -407,7 +329,7 @@ export async function fetchTeslaJobs(): Promise<Job[]> {
       const type = types[listing.f] ?? "";
       const combinedText = `${title} ${department} ${type} ${location}`;
 
-      if (!matchesTitle(title) || !isInternship(title)) {
+      if (!isMechanicalInternship(title)) {
         return null;
       }
 
@@ -416,11 +338,11 @@ export async function fetchTeslaJobs(): Promise<Job[]> {
         companyUrl: "https://www.tesla.com/careers",
         title,
         location,
-        url: "https://www.tesla.com/careers",
+        url: listing.id ? `https://www.tesla.com/careers/search/job/${listing.id}` : "https://www.tesla.com/careers",
         source: "Tesla Careers",
         postedAt: null,
         ageDays: null,
-        category: getCategory(combinedText),
+        category: getCategory(title) !== "other" ? getCategory(title) : getCategory(combinedText),
         score: scoreJob(title),
       } as Job;
     })
@@ -446,7 +368,7 @@ export async function fetchSpaceXJobs(): Promise<Job[]> {
       const employmentType = job.employementType ?? job.employmentType ?? "";
       const combinedText = `${title} ${description} ${job.discipline ?? ""} ${job.category ?? ""} ${employmentType}`;
 
-      if (!matchesTitle(title) || !isInternship(title)) {
+      if (!isMechanicalInternship(title)) {
         return null;
       }
 
@@ -455,11 +377,11 @@ export async function fetchSpaceXJobs(): Promise<Job[]> {
         companyUrl: "https://www.spacex.com/careers",
         title,
         location,
-        url: "https://www.spacex.com/careers/jobs",
+        url: job.greenhouseId ? `https://boards.greenhouse.io/spacex/jobs/${job.greenhouseId}` : "https://www.spacex.com/careers/jobs",
         source: "SpaceX Jobs JSON",
         postedAt: null,
         ageDays: null,
-        category: getCategory(combinedText),
+        category: getCategory(title) !== "other" ? getCategory(title) : getCategory(combinedText),
         score: scoreJob(title),
       } as Job;
     })
@@ -490,12 +412,12 @@ export async function fetchRivianJobs(): Promise<Job[]> {
       const location = jobData.full_location ?? jobData.location_name ?? jobData.location ?? null;
       const combinedText = `${title} ${description} ${jobData.category ?? ""} ${jobData.tags1 ?? ""} ${jobData.tags2 ?? ""}`;
 
-      if (!matchesTitle(title) || !isInternship(title)) {
+      if (!isMechanicalInternship(title)) {
         continue;
       }
 
-      const urlCandidate = jobData.apply_url ?? jobData.applicationUrl ?? jobData.externalUrl ?? jobData.url ?? `https://careers.rivian.com/careers-home/jobs`;
-      const postedAt = jobData.posted_date ?? jobData.create_date ?? jobData.update_date ?? null;
+      const urlCandidate = jobData.externalUrl ?? jobData.url ?? jobData.apply_url ?? jobData.applicationUrl ?? `https://careers.rivian.com/careers-home/jobs`;
+      const postedAt = jobData.posted_date ?? jobData.create_date ?? null;
 
       jobs.push({
         companyName: "Rivian",
@@ -506,7 +428,7 @@ export async function fetchRivianJobs(): Promise<Job[]> {
         source: "Rivian Careers API",
         postedAt,
         ageDays: calculateAgeDays(postedAt),
-        category: getCategory(combinedText),
+        category: getCategory(title) !== "other" ? getCategory(title) : getCategory(combinedText),
         score: scoreJob(title),
       });
     }
@@ -545,7 +467,7 @@ export async function fetchRiplingJobs(company: Company): Promise<Job[]> {
         const description = (p.description as string) ?? '';
         const combined = `${title} ${description}`;
 
-        if (!matchesKeywords(combined) || !isInternship(title)) continue;
+        if (!isMechanicalInternship(title)) continue;
 
         const jobUrl = p.url ?? url;
         const postedAt = p.datePosted ?? null;
@@ -559,7 +481,7 @@ export async function fetchRiplingJobs(company: Company): Promise<Job[]> {
           source: 'Rippling',
           postedAt,
           ageDays: calculateAgeDays(postedAt),
-          category: getCategory(combined),
+          category: getCategory(title) !== "other" ? getCategory(title) : getCategory(combined),
           score: scoreJob(title),
         } as Job);
       }
@@ -599,7 +521,7 @@ export async function fetchPhenomJobs(company: Company): Promise<Job[]> {
         const description = (p.description as string) ?? '';
         const combined = `${title} ${description}`;
 
-        if (!matchesKeywords(combined) || !isInternship(title)) continue;
+        if (!isMechanicalInternship(title)) continue;
 
         const jobUrl = p.url ?? url;
         const postedAt = p.datePosted ?? null;
@@ -613,7 +535,7 @@ export async function fetchPhenomJobs(company: Company): Promise<Job[]> {
           source: 'PhenomPeople',
           postedAt,
           ageDays: calculateAgeDays(postedAt),
-          category: getCategory(combined),
+          category: getCategory(title) !== "other" ? getCategory(title) : getCategory(combined),
           score: scoreJob(title),
         } as Job);
       }
@@ -625,47 +547,45 @@ export async function fetchPhenomJobs(company: Company): Promise<Job[]> {
   return jobs;
 }
 
-async function fetchCompanyJobs(company: Company): Promise<Job[]> {
-  const greenhouseJobs = await fetchGreenhouseJobs(company);
-  const leverJobs = await fetchLeverJobs(company);
-  const workdayJobs = await fetchWorkdayJobs(company);
-  const icimsJobs = await fetchICIMSJobs(company);
-  const phenomJobs = await fetchPhenomJobs(company);
-  const riplingJobs = company.custom === "rippling" ? await fetchRiplingJobs(company) : [];
-  const teslaJobs = company.custom === "tesla" ? await fetchTeslaJobs() : [];
-  const spacexJobs = company.custom === "spacex" ? await fetchSpaceXJobs() : [];
-  const rivianJobs = company.custom === "rivian" ? await fetchRivianJobs() : [];
 
-  console.log(
-    company.name,
-    greenhouseJobs.length,
-    leverJobs.length,
-    workdayJobs.length,
-    icimsJobs.length,
-    phenomJobs.length,
-    riplingJobs.length,
-    teslaJobs.length,
-    spacexJobs.length,
-    rivianJobs.length,
-  );
-
-  return [
-    ...greenhouseJobs,
-    ...leverJobs,
-    ...workdayJobs,
-    ...icimsJobs,
-    ...phenomJobs,
-    ...riplingJobs,
-    ...teslaJobs,
-    ...spacexJobs,
-    ...rivianJobs,
-  ];
+export async function getSnapshot(): Promise<{ jobs: Job[]; sources: SourceHealth[] }> {
+  const tasks: { company: Company; source: string; complete: boolean; run: () => Promise<Job[]> }[] = [];
+  const sources: SourceHealth[] = [];
+  for (const company of COMPANIES) {
+    const add = (source: string, enabled: unknown, complete: boolean, run: () => Promise<Job[]>) => {
+      if (enabled) tasks.push({ company, source, complete, run });
+    };
+    const before = tasks.length;
+    add("Greenhouse", company.greenhouse, true, () => fetchGreenhouseJobs(company));
+    add("Lever", company.lever, true, () => fetchLeverJobs(company));
+    add("Workday", company.workday, false, () => fetchWorkdayJobs(company));
+    add("iCIMS", company.icims, false, () => fetchICIMSJobs(company));
+    add("PhenomPeople", company.phenom, false, () => fetchPhenomJobs(company));
+    add("Rippling", company.custom === "rippling", false, () => fetchRiplingJobs(company));
+    add("Tesla Careers", company.custom === "tesla", false, fetchTeslaJobs);
+    add("SpaceX Jobs JSON", company.custom === "spacex", false, fetchSpaceXJobs);
+    add("Rivian Careers API", company.custom === "rivian", false, fetchRivianJobs);
+    if (tasks.length === before) sources.push({ company: company.name, source: "None", checkedAt: new Date().toISOString(), status: "unconfigured", count: 0, detail: "Target company; no scraper configured." });
+  }
+  const results = await mapLimited(tasks, async (task) => {
+    const context = { failures: 0 };
+    return requestContext.run(context, async () => {
+      let jobs: Job[] = [];
+      let status: SourceHealth["status"] = task.complete ? "ok" : "partial";
+      let detail = task.complete ? "Complete feed parsed." : "Best-effort source; absence does not establish closure.";
+      try {
+        jobs = await task.run();
+        if (context.failures) { status = jobs.length ? "partial" : "failed"; detail = "One or more requests failed; previous listings retained."; }
+      } catch {
+        status = "failed";
+        detail = "Fetch or response validation failed; previous listings retained.";
+      }
+      sources.push({ company: task.company.name, source: task.source, checkedAt: new Date().toISOString(), status, count: jobs.length, detail });
+      return jobs;
+    });
+  });
+  sources.sort((a, b) => a.company.localeCompare(b.company) || a.source.localeCompare(b.source));
+  return { jobs: results.flat(), sources };
 }
 
-export async function getJobs(): Promise<Job[]> {
-  const jobs = await Promise.all(
-    COMPANIES.map((company) => fetchCompanyJobs(company)),
-  );
-
-  return jobs.flat();
-}
+export async function getJobs(): Promise<Job[]> { return (await getSnapshot()).jobs; }

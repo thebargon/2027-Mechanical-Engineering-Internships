@@ -1,0 +1,1057 @@
+{
+  "version": 1,
+  "updatedAt": "2026-09-04T23:40:29.290Z",
+  "jobs": [
+    {
+      "companyName": "Rivian",
+      "companyUrl": "https://careers.rivian.com/careers-home/jobs",
+      "category": "mechanical_design",
+      "title": "UIUC Research Park Intern - Mechanical Modeling",
+      "location": "Champaign, Illinois",
+      "source": "Rivian Careers API",
+      "postedAt": "2026-07-28",
+      "ageDays": null,
+      "url": "https://us-careers-rivian.icims.com/jobs/32574/login",
+      "score": 0,
+      "id": "[\"Rivian\",\"Rivian Careers API\",\"https://us-careers-rivian.icims.com/jobs/32574/login\",\"UIUC Research Park Intern - Mechanical Modeling\",\"Champaign, Illinois\"]",
+      "term": "unspecified",
+      "firstSeenAt": "2026-09-04T23:32:20.290Z",
+      "lastSeenAt": null,
+      "lastCheckedAt": "2026-09-04T23:40:29.290Z",
+      "status": "unverified",
+      "missingChecks": 0,
+      "lastMissingDate": null,
+      "closedAt": null
+    },
+    {
+      "companyName": "Hermeus",
+      "companyUrl": "https://jobs.lever.co/hermeus",
+      "title": "Mechanical Engineering Intern  - Fall 2026",
+      "location": "Los Angeles, CA",
+      "url": "https://jobs.lever.co/hermeus/6b6afa4a-b37d-4033-ac3b-e6501a951b98",
+      "source": "Lever",
+      "postedAt": "2026-03-09T20:47:32.311Z",
+      "ageDays": 179,
+      "category": "mechanical_design",
+      "score": 5,
+      "id": "[\"Hermeus\",\"Lever\",\"https://jobs.lever.co/hermeus/6b6afa4a-b37d-4033-ac3b-e6501a951b98\",\"Mechanical Engineering Intern  - Fall 2026\",\"Los Angeles, CA\"]",
+      "term": "other",
+      "firstSeenAt": "2026-09-04T23:32:20.290Z",
+      "lastSeenAt": "2026-09-04T23:40:29.290Z",
+      "lastCheckedAt": "2026-09-04T23:40:29.290Z",
+      "status": "open",
+      "missingChecks": 0,
+      "lastMissingDate": null,
+      "closedAt": null
+    },
+    {
+      "companyName": "Hermeus",
+      "companyUrl": "https://jobs.lever.co/hermeus",
+      "title": "Manufacturing Engineering Intern - Fall 2026",
+      "location": "Los Angeles, CA",
+      "url": "https://jobs.lever.co/hermeus/a1f3aa29-72ea-4843-b2ea-801f3bef73ae",
+      "source": "Lever",
+      "postedAt": "2025-09-30T01:10:25.312Z",
+      "ageDays": 340,
+      "category": "manufacturing",
+      "score": 2,
+      "id": "[\"Hermeus\",\"Lever\",\"https://jobs.lever.co/hermeus/a1f3aa29-72ea-4843-b2ea-801f3bef73ae\",\"Manufacturing Engineering Intern - Fall 2026\",\"Los Angeles, CA\"]",
+      "term": "other",
+      "firstSeenAt": "2026-09-04T23:32:20.290Z",
+      "lastSeenAt": "2026-09-04T23:40:29.290Z",
+      "lastCheckedAt": "2026-09-04T23:40:29.290Z",
+      "status": "open",
+      "missingChecks": 0,
+      "lastMissingDate": null,
+      "closedAt": null
+    },
+    {
+      "companyName": "Hermeus",
+      "companyUrl": "https://jobs.lever.co/hermeus",
+      "title": "Propulsion Test Engineering Intern - Fall 2026",
+      "location": "Jacksonville, FL",
+      "url": "https://jobs.lever.co/hermeus/31513d2a-8e08-424b-b125-4f972fcfc805",
+      "source": "Lever",
+      "postedAt": "2026-03-16T14:29:06.069Z",
+      "ageDays": 172,
+      "category": "aerospace",
+      "score": 0,
+      "id": "[\"Hermeus\",\"Lever\",\"https://jobs.lever.co/hermeus/31513d2a-8e08-424b-b125-4f972fcfc805\",\"Propulsion Test Engineering Intern - Fall 2026\",\"Jacksonville, FL\"]",
+      "term": "other",
+      "firstSeenAt": "2026-09-04T23:32:20.290Z",
+      "lastSeenAt": "2026-09-04T23:40:29.290Z",
+      "lastCheckedAt": "2026-09-04T23:40:29.290Z",
+      "status": "open",
+      "missingChecks": 0,
+      "lastMissingDate": null,
+      "closedAt": null
+    },
+    {
+      "companyName": "Hermeus",
+      "companyUrl": "https://jobs.lever.co/hermeus",
+      "title": "Manufacturing Engineering Intern - Spring/Summer 2027",
+      "location": "Atlanta, GA",
+      "url": "https://jobs.lever.co/hermeus/1bdf3754-5649-4a50-913e-b05140cb004f",
+      "source": "Lever",
+      "postedAt": "2026-09-02T01:22:55.444Z",
+      "ageDays": 3,
+      "category": "manufacturing",
+      "score": 2,
+      "id": "[\"Hermeus\",\"Lever\",\"https://jobs.lever.co/hermeus/1bdf3754-5649-4a50-913e-b05140cb004f\",\"Manufacturing Engineering Intern - Spring/Summer 2027\",\"Atlanta, GA\"]",
+      "term": "2027",
+      "firstSeenAt": "2026-09-04T23:35:23.488Z",
+      "lastSeenAt": "2026-09-04T23:40:29.290Z",
+      "lastCheckedAt": "2026-09-04T23:40:29.290Z",
+      "status": "open",
+      "missingChecks": 0,
+      "lastMissingDate": null,
+      "closedAt": null
+    },
+    {
+      "companyName": "Hermeus",
+      "companyUrl": "https://jobs.lever.co/hermeus",
+      "title": "Propulsion Component Engineering Intern - Spring 2027",
+      "location": "Los Angeles, CA",
+      "url": "https://jobs.lever.co/hermeus/2cbb75f7-a040-47b2-a442-d9cc1faedb11",
+      "source": "Lever",
+      "postedAt": "2026-08-31T20:56:58.717Z",
+      "ageDays": 4,
+      "category": "aerospace",
+      "score": 0,
+      "id": "[\"Hermeus\",\"Lever\",\"https://jobs.lever.co/hermeus/2cbb75f7-a040-47b2-a442-d9cc1faedb11\",\"Propulsion Component Engineering Intern - Spring 2027\",\"Los Angeles, CA\"]",
+      "term": "2027",
+      "firstSeenAt": "2026-09-04T23:35:23.488Z",
+      "lastSeenAt": "2026-09-04T23:40:29.290Z",
+      "lastCheckedAt": "2026-09-04T23:40:29.290Z",
+      "status": "open",
+      "missingChecks": 0,
+      "lastMissingDate": null,
+      "closedAt": null
+    },
+    {
+      "companyName": "Hermeus",
+      "companyUrl": "https://jobs.lever.co/hermeus",
+      "title": "Propulsion Engineer Intern - Fall 2026",
+      "location": "Los Angeles, CA",
+      "url": "https://jobs.lever.co/hermeus/a949f158-6900-42e1-890d-fb3ec339c3d0",
+      "source": "Lever",
+      "postedAt": "2026-03-04T23:07:19.629Z",
+      "ageDays": 184,
+      "category": "aerospace",
+      "score": 0,
+      "id": "[\"Hermeus\",\"Lever\",\"https://jobs.lever.co/hermeus/a949f158-6900-42e1-890d-fb3ec339c3d0\",\"Propulsion Engineer Intern - Fall 2026\",\"Los Angeles, CA\"]",
+      "term": "other",
+      "firstSeenAt": "2026-09-04T23:35:23.488Z",
+      "lastSeenAt": "2026-09-04T23:40:29.290Z",
+      "lastCheckedAt": "2026-09-04T23:40:29.290Z",
+      "status": "open",
+      "missingChecks": 0,
+      "lastMissingDate": null,
+      "closedAt": null
+    },
+    {
+      "companyName": "Hermeus",
+      "companyUrl": "https://jobs.lever.co/hermeus",
+      "title": "Structures Engineering Intern - Spring/Summer/Fall 2027",
+      "location": "Los Angeles, CA",
+      "url": "https://jobs.lever.co/hermeus/6b65768c-a8b2-4c77-8d5f-f407e32bb878",
+      "source": "Lever",
+      "postedAt": "2026-09-02T00:50:49.999Z",
+      "ageDays": 3,
+      "category": "aerospace",
+      "score": 0,
+      "id": "[\"Hermeus\",\"Lever\",\"https://jobs.lever.co/hermeus/6b65768c-a8b2-4c77-8d5f-f407e32bb878\",\"Structures Engineering Intern - Spring/Summer/Fall 2027\",\"Los Angeles, CA\"]",
+      "term": "2027",
+      "firstSeenAt": "2026-09-04T23:35:23.488Z",
+      "lastSeenAt": "2026-09-04T23:40:29.290Z",
+      "lastCheckedAt": "2026-09-04T23:40:29.290Z",
+      "status": "open",
+      "missingChecks": 0,
+      "lastMissingDate": null,
+      "closedAt": null
+    },
+    {
+      "companyName": "Hermeus",
+      "companyUrl": "https://jobs.lever.co/hermeus",
+      "title": "Structures/Mechanical Engineering Intern - Spring/Summer 2027",
+      "location": "Atlanta, GA",
+      "url": "https://jobs.lever.co/hermeus/60b5d40a-1065-4bd2-8c72-6b2fb69d4761",
+      "source": "Lever",
+      "postedAt": "2026-09-02T01:04:36.096Z",
+      "ageDays": 3,
+      "category": "mechanical_design",
+      "score": 5,
+      "id": "[\"Hermeus\",\"Lever\",\"https://jobs.lever.co/hermeus/60b5d40a-1065-4bd2-8c72-6b2fb69d4761\",\"Structures/Mechanical Engineering Intern - Spring/Summer 2027\",\"Atlanta, GA\"]",
+      "term": "2027",
+      "firstSeenAt": "2026-09-04T23:35:23.488Z",
+      "lastSeenAt": "2026-09-04T23:40:29.290Z",
+      "lastCheckedAt": "2026-09-04T23:40:29.290Z",
+      "status": "open",
+      "missingChecks": 0,
+      "lastMissingDate": null,
+      "closedAt": null
+    },
+    {
+      "companyName": "Anduril",
+      "companyUrl": "https://boards.greenhouse.io/andurilindustries",
+      "title": "2026 Mechanical Engineering Intern",
+      "location": "Sydney, New South Wales, Australia",
+      "url": "https://boards.greenhouse.io/andurilindustries/jobs/5211102007?gh_jid=5211102007",
+      "source": "Greenhouse",
+      "postedAt": null,
+      "ageDays": null,
+      "category": "mechanical_design",
+      "score": 5,
+      "id": "[\"Anduril\",\"Greenhouse\",\"https://boards.greenhouse.io/andurilindustries/jobs/5211102007?gh_jid=5211102007\",\"2026 Mechanical Engineering Intern\",\"Sydney, New South Wales, Australia\"]",
+      "term": "other",
+      "firstSeenAt": "2026-09-04T23:40:29.290Z",
+      "lastSeenAt": "2026-09-04T23:40:29.290Z",
+      "lastCheckedAt": "2026-09-04T23:40:29.290Z",
+      "status": "open",
+      "missingChecks": 0,
+      "lastMissingDate": null,
+      "closedAt": null
+    },
+    {
+      "companyName": "Anduril",
+      "companyUrl": "https://boards.greenhouse.io/andurilindustries",
+      "title": "2026 Robotics Engineer Intern",
+      "location": "Sydney, New South Wales, Australia",
+      "url": "https://boards.greenhouse.io/andurilindustries/jobs/5211095007?gh_jid=5211095007",
+      "source": "Greenhouse",
+      "postedAt": null,
+      "ageDays": null,
+      "category": "robotics_controls",
+      "score": 4,
+      "id": "[\"Anduril\",\"Greenhouse\",\"https://boards.greenhouse.io/andurilindustries/jobs/5211095007?gh_jid=5211095007\",\"2026 Robotics Engineer Intern\",\"Sydney, New South Wales, Australia\"]",
+      "term": "other",
+      "firstSeenAt": "2026-09-04T23:40:29.290Z",
+      "lastSeenAt": "2026-09-04T23:40:29.290Z",
+      "lastCheckedAt": "2026-09-04T23:40:29.290Z",
+      "status": "open",
+      "missingChecks": 0,
+      "lastMissingDate": null,
+      "closedAt": null
+    },
+    {
+      "companyName": "Anduril",
+      "companyUrl": "https://boards.greenhouse.io/andurilindustries",
+      "title": "2027 Manufacturing Engineer Intern",
+      "location": "Atlanta, Georgia, United States; Boston, Massachusetts, United States; Broomfield, Colorado, United States; Colorado Springs, Colorado, United States; Costa Mesa, California, United States; Fort Collins, Colorado, United States; Irvine, California, United States; Seattle, Washington, United States",
+      "url": "https://boards.greenhouse.io/andurilindustries/jobs/5153218007?gh_jid=5153218007",
+      "source": "Greenhouse",
+      "postedAt": null,
+      "ageDays": null,
+      "category": "manufacturing",
+      "score": 2,
+      "id": "[\"Anduril\",\"Greenhouse\",\"https://boards.greenhouse.io/andurilindustries/jobs/5153218007?gh_jid=5153218007\",\"2027 Manufacturing Engineer Intern\",\"Atlanta, Georgia, United States; Boston, Massachusetts, United States; Broomfield, Colorado, United States; Colorado Springs, Colorado, United States; Costa Mesa, California, United States; Fort Collins, Colorado, United States; Irvine, California, United States; Seattle, Washington, United States\"]",
+      "term": "2027",
+      "firstSeenAt": "2026-09-04T23:40:29.290Z",
+      "lastSeenAt": "2026-09-04T23:40:29.290Z",
+      "lastCheckedAt": "2026-09-04T23:40:29.290Z",
+      "status": "open",
+      "missingChecks": 0,
+      "lastMissingDate": null,
+      "closedAt": null
+    },
+    {
+      "companyName": "Anduril",
+      "companyUrl": "https://boards.greenhouse.io/andurilindustries",
+      "title": "2027 Mechanical Engineer Intern",
+      "location": "Atlanta, Georgia, United States; Boston, Massachusetts, United States; Broomfield, Colorado, United States; Colorado Springs, Colorado, United States; Costa Mesa, California, United States; Fort Collins, Colorado, United States; Irvine, California, United States; Reston, Virginia, United States; Seattle, Washington, United States",
+      "url": "https://boards.greenhouse.io/andurilindustries/jobs/5153187007?gh_jid=5153187007",
+      "source": "Greenhouse",
+      "postedAt": null,
+      "ageDays": null,
+      "category": "mechanical_design",
+      "score": 5,
+      "id": "[\"Anduril\",\"Greenhouse\",\"https://boards.greenhouse.io/andurilindustries/jobs/5153187007?gh_jid=5153187007\",\"2027 Mechanical Engineer Intern\",\"Atlanta, Georgia, United States; Boston, Massachusetts, United States; Broomfield, Colorado, United States; Colorado Springs, Colorado, United States; Costa Mesa, California, United States; Fort Collins, Colorado, United States; Irvine, California, United States; Reston, Virginia, United States; Seattle, Washington, United States\"]",
+      "term": "2027",
+      "firstSeenAt": "2026-09-04T23:40:29.290Z",
+      "lastSeenAt": "2026-09-04T23:40:29.290Z",
+      "lastCheckedAt": "2026-09-04T23:40:29.290Z",
+      "status": "open",
+      "missingChecks": 0,
+      "lastMissingDate": null,
+      "closedAt": null
+    }
+  ],
+  "sources": [
+    {
+      "company": "3M",
+      "source": "Workday",
+      "checkedAt": "2026-09-04T23:40:20.934Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "One or more requests failed; previous listings retained."
+    },
+    {
+      "company": "Abbott",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "AeroVironment",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "Agility Robotics",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "AMD",
+      "source": "Lever",
+      "checkedAt": "2026-09-04T23:40:20.280Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "Fetch or response validation failed; previous listings retained."
+    },
+    {
+      "company": "Anduril",
+      "source": "Greenhouse",
+      "checkedAt": "2026-09-04T23:40:20.182Z",
+      "status": "ok",
+      "count": 5,
+      "detail": "Complete feed parsed."
+    },
+    {
+      "company": "Apple",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "Applied Materials",
+      "source": "Greenhouse",
+      "checkedAt": "2026-09-04T23:40:26.187Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "Fetch or response validation failed; previous listings retained."
+    },
+    {
+      "company": "Archer Aviation",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "ASML",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "Atlas Copco",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "BAE Systems",
+      "source": "Workday",
+      "checkedAt": "2026-09-04T23:40:14.952Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "One or more requests failed; previous listings retained."
+    },
+    {
+      "company": "Bell Flight",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "Blue Origin",
+      "source": "Greenhouse",
+      "checkedAt": "2026-09-04T23:40:21.937Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "Fetch or response validation failed; previous listings retained."
+    },
+    {
+      "company": "Blue Origin",
+      "source": "Lever",
+      "checkedAt": "2026-09-04T23:40:22.457Z",
+      "status": "ok",
+      "count": 0,
+      "detail": "Complete feed parsed."
+    },
+    {
+      "company": "BMW",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "Boeing",
+      "source": "Greenhouse",
+      "checkedAt": "2026-09-04T23:40:20.667Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "Fetch or response validation failed; previous listings retained."
+    },
+    {
+      "company": "Boeing",
+      "source": "Lever",
+      "checkedAt": "2026-09-04T23:40:21.211Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "Fetch or response validation failed; previous listings retained."
+    },
+    {
+      "company": "Boeing",
+      "source": "Workday",
+      "checkedAt": "2026-09-04T23:40:23.701Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "One or more requests failed; previous listings retained."
+    },
+    {
+      "company": "Boom Supersonic",
+      "source": "Rippling",
+      "checkedAt": "2026-09-04T23:40:27.462Z",
+      "status": "partial",
+      "count": 0,
+      "detail": "Best-effort source; absence does not establish closure."
+    },
+    {
+      "company": "Bosch",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "Boston Dynamics",
+      "source": "Greenhouse",
+      "checkedAt": "2026-09-04T23:40:27.934Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "Fetch or response validation failed; previous listings retained."
+    },
+    {
+      "company": "Boston Scientific",
+      "source": "Greenhouse",
+      "checkedAt": "2026-09-04T23:40:25.925Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "Fetch or response validation failed; previous listings retained."
+    },
+    {
+      "company": "Carrier",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "Caterpillar",
+      "source": "Greenhouse",
+      "checkedAt": "2026-09-04T23:40:23.928Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "Fetch or response validation failed; previous listings retained."
+    },
+    {
+      "company": "CNH Industrial",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "Collins Aerospace",
+      "source": "PhenomPeople",
+      "checkedAt": "2026-09-04T23:40:28.167Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "One or more requests failed; previous listings retained."
+    },
+    {
+      "company": "Cummins",
+      "source": "Greenhouse",
+      "checkedAt": "2026-09-04T23:40:23.434Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "Fetch or response validation failed; previous listings retained."
+    },
+    {
+      "company": "Danaher",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "Dyson",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "Eaton",
+      "source": "Workday",
+      "checkedAt": "2026-09-04T23:40:17.708Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "One or more requests failed; previous listings retained."
+    },
+    {
+      "company": "Edwards Lifesciences",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "Emerson",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "Figure AI",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "Ford",
+      "source": "Greenhouse",
+      "checkedAt": "2026-09-04T23:40:24.203Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "Fetch or response validation failed; previous listings retained."
+    },
+    {
+      "company": "Ford",
+      "source": "Lever",
+      "checkedAt": "2026-09-04T23:40:24.468Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "Fetch or response validation failed; previous listings retained."
+    },
+    {
+      "company": "Garmin",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "GE Aerospace",
+      "source": "Greenhouse",
+      "checkedAt": "2026-09-04T23:40:22.675Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "Fetch or response validation failed; previous listings retained."
+    },
+    {
+      "company": "General Motors",
+      "source": "Greenhouse",
+      "checkedAt": "2026-09-04T23:40:24.677Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "Fetch or response validation failed; previous listings retained."
+    },
+    {
+      "company": "General Motors",
+      "source": "Lever",
+      "checkedAt": "2026-09-04T23:40:25.381Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "Fetch or response validation failed; previous listings retained."
+    },
+    {
+      "company": "GlobalFoundries",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "Google",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "Hermeus",
+      "source": "Lever",
+      "checkedAt": "2026-09-04T23:40:27.461Z",
+      "status": "ok",
+      "count": 11,
+      "detail": "Complete feed parsed."
+    },
+    {
+      "company": "Honda",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "Honeywell",
+      "source": "Greenhouse",
+      "checkedAt": "2026-09-04T23:40:23.180Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "Fetch or response validation failed; previous listings retained."
+    },
+    {
+      "company": "Honeywell Aerospace",
+      "source": "Greenhouse",
+      "checkedAt": "2026-09-04T23:40:26.679Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "Fetch or response validation failed; previous listings retained."
+    },
+    {
+      "company": "Hyundai",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "Intel",
+      "source": "Lever",
+      "checkedAt": "2026-09-04T23:40:19.700Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "Fetch or response validation failed; previous listings retained."
+    },
+    {
+      "company": "Intrinsic",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "Intuitive Surgical",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "J&J",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "Joby Aviation",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "John Deere",
+      "source": "Greenhouse",
+      "checkedAt": "2026-09-04T23:40:18.470Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "Fetch or response validation failed; previous listings retained."
+    },
+    {
+      "company": "Johnson Controls",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "KLA",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "Komatsu",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "L3Harris",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "Lam Research",
+      "source": "Greenhouse",
+      "checkedAt": "2026-09-04T23:40:26.431Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "Fetch or response validation failed; previous listings retained."
+    },
+    {
+      "company": "Lockheed Martin",
+      "source": "Greenhouse",
+      "checkedAt": "2026-09-04T23:40:21.670Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "Fetch or response validation failed; previous listings retained."
+    },
+    {
+      "company": "Lucid",
+      "source": "Greenhouse",
+      "checkedAt": "2026-09-04T23:40:25.182Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "Fetch or response validation failed; previous listings retained."
+    },
+    {
+      "company": "Lucid",
+      "source": "Lever",
+      "checkedAt": "2026-09-04T23:40:25.659Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "Fetch or response validation failed; previous listings retained."
+    },
+    {
+      "company": "Medtronic",
+      "source": "Greenhouse",
+      "checkedAt": "2026-09-04T23:40:25.669Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "Fetch or response validation failed; previous listings retained."
+    },
+    {
+      "company": "Mercedes-Benz",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "Meta",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "Micron",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "Moog",
+      "source": "Workday",
+      "checkedAt": "2026-09-04T23:40:15.212Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "One or more requests failed; previous listings retained."
+    },
+    {
+      "company": "Northrop Grumman",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "NVIDIA",
+      "source": "Lever",
+      "checkedAt": "2026-09-04T23:40:19.430Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "Fetch or response validation failed; previous listings retained."
+    },
+    {
+      "company": "Parker Hannifin",
+      "source": "Workday",
+      "checkedAt": "2026-09-04T23:40:29.289Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "One or more requests failed; previous listings retained."
+    },
+    {
+      "company": "Polaris",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "Pratt & Whitney",
+      "source": "Workday",
+      "checkedAt": "2026-09-04T23:40:11.717Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "One or more requests failed; previous listings retained."
+    },
+    {
+      "company": "Qualcomm",
+      "source": "Lever",
+      "checkedAt": "2026-09-04T23:40:20.442Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "Fetch or response validation failed; previous listings retained."
+    },
+    {
+      "company": "Raytheon",
+      "source": "Workday",
+      "checkedAt": "2026-09-04T23:40:14.729Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "One or more requests failed; previous listings retained."
+    },
+    {
+      "company": "Relativity Space",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "Rivian",
+      "source": "Rivian Careers API",
+      "checkedAt": "2026-09-04T23:40:09.276Z",
+      "status": "partial",
+      "count": 0,
+      "detail": "Best-effort source; absence does not establish closure."
+    },
+    {
+      "company": "Rocket Lab",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "Rockwell Automation",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "Rolls Royce",
+      "source": "Workday",
+      "checkedAt": "2026-09-04T23:40:12.140Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "One or more requests failed; previous listings retained."
+    },
+    {
+      "company": "RTX",
+      "source": "Workday",
+      "checkedAt": "2026-09-04T23:40:12.260Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "One or more requests failed; previous listings retained."
+    },
+    {
+      "company": "Safran",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "Schneider Electric",
+      "source": "Workday",
+      "checkedAt": "2026-09-04T23:40:17.978Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "One or more requests failed; previous listings retained."
+    },
+    {
+      "company": "Siemens",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "Skydio",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "SpaceX",
+      "source": "SpaceX Jobs JSON",
+      "checkedAt": "2026-09-04T23:40:09.112Z",
+      "status": "partial",
+      "count": 0,
+      "detail": "Best-effort source; absence does not establish closure."
+    },
+    {
+      "company": "Spirit AeroSystems",
+      "source": "iCIMS",
+      "checkedAt": "2026-09-04T23:40:27.758Z",
+      "status": "partial",
+      "count": 0,
+      "detail": "Best-effort source; absence does not establish closure."
+    },
+    {
+      "company": "Stryker",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "Tesla",
+      "source": "Tesla Careers",
+      "checkedAt": "2026-09-04T23:40:08.926Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "One or more requests failed; previous listings retained."
+    },
+    {
+      "company": "Textron",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "Tokyo Electron",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "Toyota",
+      "source": "Workday",
+      "checkedAt": "2026-09-04T23:40:18.221Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "One or more requests failed; previous listings retained."
+    },
+    {
+      "company": "Trane Technologies",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "TSMC",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "Virgin Galactic",
+      "source": "PhenomPeople",
+      "checkedAt": "2026-09-04T23:40:27.426Z",
+      "status": "failed",
+      "count": 0,
+      "detail": "One or more requests failed; previous listings retained."
+    },
+    {
+      "company": "Volvo",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "Whirlpool",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "Zimmer Biomet",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    },
+    {
+      "company": "Zipline",
+      "source": "None",
+      "checkedAt": "2026-09-04T23:40:08.615Z",
+      "status": "unconfigured",
+      "count": 0,
+      "detail": "Target company; no scraper configured."
+    }
+  ]
+}

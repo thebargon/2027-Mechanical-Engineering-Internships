@@ -1,0 +1,37 @@
+{
+  "jobs": [
+    {
+      "title": "Engineering Intern 2027",
+      "content": "<p>Mechanical design and CAD experience.</p>",
+      "absolute_url": "https://example.com/jobs/1",
+      "updated_at": "2026-09-01T00:00:00Z",
+      "location": {
+        "name": "Boston, MA"
+      }
+    },
+    {
+      "title": "Software Intern 2027",
+      "content": "Mechanical and robotics software",
+      "absolute_url": "https://example.com/jobs/2"
+    },
+    {
+      "title": "International Mechanical Manager",
+      "content": "Mechanical",
+      "absolute_url": "https://example.com/jobs/3"
+    },
+    {
+      "title": "Mechanical Engineering Intern 2027",
+      "content": "<p>Mechanical design and CAD experience.</p>",
+      "absolute_url": "https://example.com/jobs/4",
+      "updated_at": "2026-09-01T00:00:00Z",
+      "location": {
+        "name": "Boston, MA"
+      }
+    },
+    {
+      "title": "Electrical Engineer Intern 2027",
+      "content": "Mechanical design and CAD experience.",
+      "absolute_url": "https://example.com/jobs/5"
+    }
+  ]
+}

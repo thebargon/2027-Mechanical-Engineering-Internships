@@ -19,3 +19,13 @@ Thumbs.db
 .vscode/
 *.swp
 *.swo
+
+# Personal data and credentials (never publish)
+private/
+APPLICATIONS.md
+.env
+.env.*
+!.env.example
+scripts/notified-jobs.json
+*.tmp
+desktop.ini

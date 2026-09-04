@@ -1,0 +1,23 @@
+name: Company suggestion
+description: Suggest an employer or a working career-board source.
+title: "[Company] "
+body:
+  - type: input
+    id: company
+    attributes:
+      label: Company name
+    validations:
+      required: true
+  - type: input
+    id: careers
+    attributes:
+      label: Public careers or job-board URL
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Relevant internship examples and source details
+      description: Include an example mechanical engineering or related hardware internship, if available.
+    validations:
+      required: true

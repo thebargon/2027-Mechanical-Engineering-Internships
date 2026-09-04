@@ -1,0 +1,76 @@
+[
+  {
+    "greenhouseId": 8399574002,
+    "title": "Accountant, International",
+    "location": "Hawthorne, CA",
+    "programs": [
+      "Corporate"
+    ],
+    "discipline": "Finance & Accounting",
+    "employementType": "Regular",
+    "category": "Corporate"
+  },
+  {
+    "greenhouseId": 8403205002,
+    "title": "Fall 2026 Business Operations Internship/Co-op",
+    "location": "Flexible - Any SpaceX Site",
+    "programs": [
+      "Falcon",
+      "Dragon",
+      "Starlink",
+      "Starship",
+      "Starshield",
+      "Corporate"
+    ],
+    "discipline": "Internship/Co-Op",
+    "employementType": "Intern",
+    "category": "Internship"
+  },
+  {
+    "greenhouseId": 8403206002,
+    "title": "Fall 2026 Engineering Internship/Co-op",
+    "location": "Flexible - Any SpaceX Site",
+    "programs": [
+      "Falcon",
+      "Dragon",
+      "Starlink",
+      "Starship",
+      "Starshield"
+    ],
+    "discipline": "Internship/Co-Op",
+    "employementType": "Intern",
+    "category": "Internship"
+  },
+  {
+    "greenhouseId": 8403219002,
+    "title": "Fall 2026 Software Engineering Internship/Co-op",
+    "location": "Flexible - Any SpaceX Site",
+    "programs": [
+      "Falcon",
+      "Dragon",
+      "Starlink",
+      "Starship",
+      "Starshield",
+      "Corporate"
+    ],
+    "discipline": "Internship/Co-Op",
+    "employementType": "Intern",
+    "category": "Internship"
+  },
+  {
+    "greenhouseId": 8403223002,
+    "title": "Fall 2026 Graduate Engineer Internship/Co-op",
+    "location": "Flexible - Any SpaceX Site",
+    "programs": [
+      "Falcon",
+      "Dragon",
+      "Starlink",
+      "Starship",
+      "Starshield",
+      "Corporate"
+    ],
+    "discipline": "Internship/Co-Op",
+    "employementType": "Intern",
+    "category": "Internship"
+  }
+]

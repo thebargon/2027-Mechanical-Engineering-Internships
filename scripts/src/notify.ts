@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { Job } from "./types";
+import { isMechanicalInternship } from "./filters";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -90,6 +91,7 @@ export async function notifyNewJobs(jobs: Job[]) {
   let changed = false;
 
   for (const job of jobs) {
+    if (!isMechanicalInternship(job.title)) continue;
     const normalized = normalizeUrl(job.url || `${job.companyName}-${job.title}`);
     if (notifiedUrls.has(normalized)) {
       continue;
