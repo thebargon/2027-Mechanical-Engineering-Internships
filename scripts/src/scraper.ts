@@ -3,6 +3,8 @@ import { Company, COMPANIES } from "./companies";
 import { request, requestContext, mapLimited } from "./http";
 import type { SourceHealth } from "./history";
 import { isMechanicalInternship, getCategory } from "./filters";
+import { fetchSmartRecruitersJobs } from "./smartrecruiters";
+import { fetchJibeJobs, fetchSuccessFactorsJobs } from "./career-portals";
 
 function normalizeText(input: string | null | undefined) {
   return (input ?? "").toLowerCase();
@@ -354,60 +356,7 @@ export async function fetchSpaceXJobs(): Promise<Job[]> {
     .filter((job: Job | null): job is Job => job !== null);
 }
 
-export async function fetchRivianJobs(): Promise<Job[]> {
-  const baseUrl = "https://careers.rivian.com/api/jobs";
-  const jobs: Job[] = [];
-  let page = 1;
-  const maxPages = 5;
-
-  while (page <= maxPages) {
-    const url = `${baseUrl}?page=${page}&sortBy=relevance&descending=false&internal=false&keywords=intern&tags2=Rivian%20Automotive&deviceId=undefined&domain=rivian.jibeapply.com`;
-    const data = await fetchJson(url);
-    if (!data?.jobs || !Array.isArray(data.jobs) || data.jobs.length === 0) {
-      break;
-    }
-
-    for (const item of data.jobs) {
-      const jobData = item?.data;
-      if (!jobData) {
-        continue;
-      }
-
-      const title = jobData.title ?? "";
-      const description = jobData.description ?? "";
-      const location = jobData.full_location ?? jobData.location_name ?? jobData.location ?? null;
-      const combinedText = `${title} ${description} ${jobData.category ?? ""} ${jobData.tags1 ?? ""} ${jobData.tags2 ?? ""}`;
-
-      if (!isMechanicalInternship(title)) {
-        continue;
-      }
-
-      const urlCandidate = jobData.externalUrl ?? jobData.url ?? jobData.apply_url ?? jobData.applicationUrl ?? `https://careers.rivian.com/careers-home/jobs`;
-      const postedAt = jobData.posted_date ?? jobData.create_date ?? null;
-
-      jobs.push({
-        companyName: "Rivian",
-        companyUrl: "https://careers.rivian.com/careers-home/jobs",
-        title,
-        location,
-        url: urlCandidate,
-        source: "Rivian Careers API",
-        postedAt,
-        ageDays: calculateAgeDays(postedAt),
-        category: getCategory(title) !== "other" ? getCategory(title) : getCategory(combinedText),
-        score: scoreJob(title),
-      });
-    }
-
-    if (data.jobs.length < 10) {
-      break;
-    }
-
-    page += 1;
-  }
-
-  return jobs;
-}
+export async function fetchRivianJobs(): Promise<Job[]> { return fetchJibeJobs({ name: "Rivian" }, "careers.rivian.com", "Rivian Careers API"); }
 
 export async function fetchRiplingJobs(company: Company): Promise<Job[]> {
   const slug = company.name.toLowerCase().replace(/\s+/g, "-");
@@ -459,65 +408,13 @@ export async function fetchRiplingJobs(company: Company): Promise<Job[]> {
   return jobs;
 }
 
-export async function fetchPhenomJobs(company: Company): Promise<Job[]> {
-  const slug = company.phenom;
-  if (!slug) {
-    return [];
-  }
+export async function fetchPhenomJobs(_company: Company): Promise<Job[]> { throw new Error("Phenom employer endpoint has not been verified."); }
 
-  const url = `https://careers.rtx.com/us/en/search-results?keywords=intern`;
-  const html = await fetchText(url);
-  if (!html) {
-    return [];
-  }
-
-  const jobs: Job[] = [];
-
-  // Try to extract JSON-LD JobPosting blocks
-  const ldJsonRegex = /<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi;
-  let ldMatch: RegExpExecArray | null;
-  while ((ldMatch = ldJsonRegex.exec(html))) {
-    try {
-      const parsed = JSON.parse(ldMatch[1]);
-      const postings = Array.isArray(parsed) ? parsed : [parsed];
-      for (const p of postings) {
-        if (!p || (p['@type'] !== 'JobPosting' && p['@type'] !== 'jobPosting')) continue;
-
-        const title = p.title ?? p.name ?? '';
-        const description = (p.description as string) ?? '';
-        const combined = `${title} ${description}`;
-
-        if (!isMechanicalInternship(title)) continue;
-
-        const jobUrl = p.url ?? url;
-        const postedAt = p.datePosted ?? null;
-
-        jobs.push({
-          companyName: company.name,
-          companyUrl: url,
-          title,
-          location: p.jobLocation?.address?.addressLocality ?? null,
-          url: jobUrl,
-          source: 'PhenomPeople',
-          postedAt,
-          ageDays: calculateAgeDays(postedAt),
-          category: getCategory(title) !== "other" ? getCategory(title) : getCategory(combined),
-          score: scoreJob(title),
-        } as Job);
-      }
-    } catch {
-      // ignore JSON parse errors
-    }
-  }
-
-  return jobs;
-}
-
-
-export async function getSnapshot(): Promise<{ jobs: Job[]; sources: SourceHealth[] }> {
+export async function getSnapshot(companies: Company[] = COMPANIES): Promise<{ jobs: Job[]; sources: SourceHealth[] }> {
   const tasks: { company: Company; source: string; complete: boolean; run: () => Promise<Job[]> }[] = [];
   const sources: SourceHealth[] = [];
-  for (const company of COMPANIES) {
+  for (const company of companies) {
+    if (company.coveredBy) continue;
     const add = (source: string, enabled: unknown, complete: boolean, run: () => Promise<Job[]>) => {
       if (enabled) tasks.push({ company, source, complete, run });
     };
@@ -528,6 +425,9 @@ export async function getSnapshot(): Promise<{ jobs: Job[]; sources: SourceHealt
       sources.push({ company: company.name, source: "Workday", checkedAt: new Date().toISOString(), status: "unconfigured", count: 0, detail: "Legacy tenant guess; needs a verified host and external career-site name." });
     } else add("Workday", company.workday, false, () => fetchWorkdayJobs(company));
     add("Ashby", company.ashby, true, () => fetchAshbyJobs(company));
+    add("SmartRecruiters", company.smartRecruiters, true, () => fetchSmartRecruitersJobs(company));
+    add("iCIMS Careers API", company.jibeHost, false, () => fetchJibeJobs(company));
+    add("SuccessFactors", company.successFactorsHost, false, () => fetchSuccessFactorsJobs(company));
     add("iCIMS", company.icims, false, () => fetchICIMSJobs(company));
     add("PhenomPeople", company.phenom, false, () => fetchPhenomJobs(company));
     add("Rippling", company.custom === "rippling", false, () => fetchRiplingJobs(company));
@@ -537,7 +437,7 @@ export async function getSnapshot(): Promise<{ jobs: Job[]; sources: SourceHealt
     if (tasks.length === before && !company.workday) sources.push({ company: company.name, source: "None", checkedAt: new Date().toISOString(), status: "unconfigured", count: 0, detail: "Target company; no scraper configured." });
   }
   const results = await mapLimited(tasks, async (task) => {
-    const context: { failures: number; partial?: string } = { failures: 0 };
+    const context: { failures: number; partial?: string; lastError?: string } = { failures: 0 };
     return requestContext.run(context, async () => {
       let jobs: Job[] = [];
       let status: SourceHealth["status"] = task.complete ? "ok" : "partial";
@@ -545,15 +445,20 @@ export async function getSnapshot(): Promise<{ jobs: Job[]; sources: SourceHealt
       try {
         jobs = await task.run();
         if (context.partial) { status = "partial"; detail = context.partial; }
-        if (context.failures) { status = jobs.length ? "partial" : "failed"; detail = "One or more requests failed; previous listings retained."; }
-      } catch {
+        if (context.failures) { status = jobs.length ? "partial" : "failed"; detail = `${context.lastError ?? "Request failed"}; previous listings retained.`; }
+      } catch (error) {
         status = "failed";
-        detail = "Fetch or response validation failed; previous listings retained.";
+        detail = `${context.lastError ?? (error instanceof Error ? error.message : "Response validation failed")}; previous listings retained.`;
       }
       sources.push({ company: task.company.name, source: task.source, checkedAt: new Date().toISOString(), status, count: jobs.length, detail });
       return jobs;
     });
   });
+  for (const company of companies.filter((c) => c.coveredBy)) {
+    const parent = sources.find((s) => s.company === company.coveredBy);
+    sources.push({ company: company.name, source: "Shared employer board", checkedAt: parent?.checkedAt ?? new Date().toISOString(),
+      status: "covered", count: 0, detail: `Tracked under ${company.coveredBy} (${parent?.status ?? "unavailable"}); shared results are not duplicated or relabeled as this subsidiary.` });
+  }
   sources.sort((a, b) => a.company.localeCompare(b.company) || a.source.localeCompare(b.source));
   return { jobs: results.flat(), sources };
 }

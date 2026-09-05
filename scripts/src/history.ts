@@ -7,7 +7,7 @@ export interface SourceHealth {
   company: string;
   source: string;
   checkedAt: string;
-  status: "ok" | "partial" | "failed" | "unconfigured";
+  status: "ok" | "partial" | "failed" | "unconfigured" | "covered";
   count: number;
   detail: string;
 }

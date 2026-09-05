@@ -1,11 +1,12 @@
 import { AsyncLocalStorage } from "node:async_hooks";
 
-export const requestContext = new AsyncLocalStorage<{ failures: number; partial?: string }>();
+export const requestContext = new AsyncLocalStorage<{ failures: number; partial?: string; lastError?: string }>();
 let nextRequestAt = 0;
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 // Space request starts globally, including retries; callers also use a bounded worker pool.
 export async function request(url: string, format: "json" | "text", payload?: Record<string, unknown>): Promise<any | null> {
+  let lastError = "Request failed";
   for (let attempt = 0; attempt < 3; attempt++) {
     const start = Math.max(Date.now(), nextRequestAt);
     nextRequestAt = start + 250;
@@ -18,6 +19,7 @@ export async function request(url: string, format: "json" | "text", payload?: Re
         headers: { "User-Agent": "MechanicalInternshipTracker/1.0", Accept: format === "json" ? "application/json" : "text/html", ...(payload ? { "Content-Type": "application/json" } : {}) },
       });
       if (response.ok) return format === "json" ? await response.json() : await response.text();
+      lastError = `HTTP ${response.status}`;
       await response.body?.cancel();
       if (response.status !== 429 && response.status < 500) break;
       const retry = response.headers.get("retry-after");
@@ -26,11 +28,12 @@ export async function request(url: string, format: "json" | "text", payload?: Re
       if (delay > 10000) break;
       if (attempt < 2) await sleep(Math.max(1000, delay || 1000));
     } catch {
+      lastError = "Network, timeout, or response decoding failure";
       if (attempt < 2) await sleep(1000 * 2 ** attempt);
     }
   }
   const context = requestContext.getStore();
-  if (context) context.failures++;
+  if (context) { context.failures++; context.lastError = lastError; }
   return null;
 }
 
