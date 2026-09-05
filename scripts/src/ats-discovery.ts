@@ -36,7 +36,7 @@ async function probeUrl(url: string) {
 }
 
 async function checkGreenhouse(slug: string) {
-  const url = `https://boards.greenhouse.io/api/v1/boards/${slug}/jobs?content=true`;
+  const url = `https://boards-api.greenhouse.io/v1/boards/${slug}/jobs?content=true`;
   try {
     const res = await fetch(url, { headers: { "User-Agent": "Mozilla/5.0", Accept: "application/json" } });
     if (!res.ok) return false;
@@ -59,18 +59,6 @@ async function checkLever(slug: string) {
   }
 }
 
-async function checkWorkday(slug: string) {
-  const url = `https://${slug}.wd5.myworkdayjobs.com/wday/cxs/${slug}/Jobs/jobs`;
-  try {
-    const res = await fetch(url, { headers: { "User-Agent": "Mozilla/5.0", Accept: "application/json" } });
-    if (!res.ok) return false;
-    const json = await res.json().catch(() => null);
-    return Array.isArray(json?.jobPostings) || Boolean(json?.jobPostings);
-  } catch {
-    return false;
-  }
-}
-
 async function checkICIMS(slug: string) {
   const url = `https://${slug}.icims.com/jobs`;
   const p = await probeUrl(url);
@@ -78,6 +66,8 @@ async function checkICIMS(slug: string) {
   return /icims/i.test(p.text) || /job/i.test(p.text);
 }
 
+// Workday cannot be discovered from a tenant guess: copy its host, tenant, and
+// external site from an employer-owned career link into companies.ts.
 async function discoverForCompany(name: string) {
   const candidates = slugCandidates(name);
   const found: any = {};
@@ -89,13 +79,10 @@ async function discoverForCompany(name: string) {
     if (!found.lever) {
       if (await checkLever(c)) found.lever = { slug: c, confidence: 0.95 };
     }
-    if (!found.workday) {
-      if (await checkWorkday(c)) found.workday = { slug: c, confidence: 0.95 };
-    }
     if (!found.icims) {
       if (await checkICIMS(c)) found.icims = { slug: c, confidence: 0.7 };
     }
-    if (found.greenhouse && found.lever && found.workday && found.icims) break;
+    if (found.greenhouse && found.lever && found.icims) break;
   }
 
   return found;

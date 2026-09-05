@@ -9,6 +9,7 @@ Use the issue forms for a missing internship, a broken/closed posting, or a comp
 ## Add a company or improve an adapter
 
 1. Update `scripts/src/companies.ts` with the real employer and a verified board identifier. Companies without identifiers are targets only.
+   For Workday, provide `{ host, tenant, site }` from the employer's external career URL; a tenant name alone is insufficient. For Ashby, copy the case-sensitive board name from the employer's hosted job board. Record the source link in `SOURCES.md`.
 2. Add or update the adapter in `scripts/src/scraper.ts`. Register it in `getSnapshot` with the same source name used by its jobs. Use the shared HTTP helper and internship filters. Never add credentials or bypass access controls.
 3. Add small, sanitized response fixtures and tests covering positive matches, irrelevant roles, empty results, malformed responses, dates, and direct links. Document fixture provenance. Never commit full downloaded career sites.
 4. A source may be marked complete only if its response schema and pagination establish a complete job set. Otherwise keep it partial; partial sources must not close jobs by absence.

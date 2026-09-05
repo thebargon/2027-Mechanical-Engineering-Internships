@@ -129,101 +129,67 @@ export async function fetchLeverJobs(company: Company): Promise<Job[]> {
     .filter((job: Job | null): job is Job => job !== null);
 }
 
+// Workday requires the actual tenant, regional host, and external career-site name.
+// Search results are deliberately partial: keyword search cannot establish closure.
 export async function fetchWorkdayJobs(company: Company): Promise<Job[]> {
-  const tenant = company.workday;
-  if (!tenant) {
-    return [];
-  }
-
-  // Try both wd5 (default) and wd1 endpoints
-  const workdayVersions = [
-    `https://${tenant}.wd5.myworkdayjobs.com`,
-    `https://${tenant}.wd1.myworkdayjobs.com`,
-  ];
-
-  for (const baseUrl of workdayVersions) {
-    // Try JSON API endpoint first
-    const apiUrl = `${baseUrl}/wday/cxs/${tenant}/jobs`;
-    const data = await fetchJson(apiUrl);
-
-    if (data?.jobPostings && Array.isArray(data.jobPostings)) {
-      return data.jobPostings
-        .map((job: any) => {
-          const title = job.title ?? "";
-          const description = job.description ?? "";
-          const combinedText = `${title} ${description}`;
-
-          if (!isMechanicalInternship(title)) {
-            return null;
-          }
-
-          const locations = Array.isArray(job.locations)
-            ? job.locations.map((loc: any) => loc?.name ?? "").filter(Boolean)
-            : [];
-          const location = locations.length ? locations.join(", ") : null;
-          const jobUrl = job.externalPath
-            ? new URL(job.externalPath, baseUrl).href
-            : `${baseUrl}/wday/cxs/${tenant}/jobs`;
-          const postedAt = job.postedDate ?? job.posted_date ?? job.postedAt ?? null;
-
-          return {
-            companyName: company.name,
-            companyUrl: `${baseUrl}/wday/cxs/${tenant}`,
-            title,
-            location,
-            url: jobUrl,
-            source: "Workday",
-            postedAt,
-            ageDays: calculateAgeDays(postedAt),
-            category: getCategory(title) !== "other" ? getCategory(title) : getCategory(combinedText),
-            score: scoreJob(title),
-          } as Job;
-        })
-        .filter((job: Job | null): job is Job => job !== null);
-    }
-
-    // Try HTML scraping as fallback
-    const htmlUrl = `${baseUrl}/wday/cxs/${tenant}/jobs`;
-    const html = await fetchText(htmlUrl);
-    if (html) {
-      const jobs: Job[] = [];
-      const regex = new RegExp(`<a[^>]+href=["'](/wday/cxs/${tenant}/job[^"']+)["'][^>]*>([^<]+)<\/a>`, "gi");
-      let match: RegExpExecArray | null;
-
-      while ((match = regex.exec(html))) {
-        const title = match[2]?.trim() ?? "";
-        const combinedText = title;
-
-        if (!isMechanicalInternship(title)) {
-          continue;
-        }
-
-        const section = html.slice(Math.max(0, match.index - 200), match.index + 400);
-        const locationMatch = section.match(/(?:location|job-location|job-locations|data-automation-job-location)[^>]*>([^<]+)</i);
-        const location = locationMatch?.[1]?.trim() ?? null;
-        const jobUrl = new URL(match[1], baseUrl).href;
-
-        jobs.push({
-          companyName: company.name,
-          companyUrl: `${baseUrl}/wday/cxs/${tenant}`,
-          title,
-          location,
-          url: jobUrl,
-          source: "Workday",
-          postedAt: null,
-          ageDays: null,
-          category: getCategory(title) !== "other" ? getCategory(title) : getCategory(combinedText),
-          score: scoreJob(title),
-        } as Job);
+  const board = company.workday;
+  if (!board) return [];
+  if (typeof board === "string") throw new Error("Workday requires a verified host, tenant, and site.");
+  if (!/^[a-z0-9-]+\.wd\d+\.myworkdayjobs\.com$/i.test(board.host) ||
+      !/^[\w-]+$/.test(board.tenant) || !/^[\w-]+$/.test(board.site)) throw new Error("Invalid Workday board configuration");
+  const base = "https://" + board.host;
+  const api = base + "/wday/cxs/" + board.tenant + "/" + board.site + "/jobs";
+  const jobs = new Map<string, Job>();
+  const partial = (reason: string) => { const context = requestContext.getStore(); if (context) context.partial = reason; };
+  for (const searchText of ["intern", "co-op"]) {
+    const seen = new Set<string>();
+    let offset = 0;
+    let expectedTotal = 0;
+    let complete = false;
+    for (let page = 0; page < 100; page++) {
+      const data = await request(api, "json", { limit: 20, offset, searchText, appliedFacets: {} });
+      if (!data || !Array.isArray(data.jobPostings) || !Number.isInteger(data.total) || data.total < 0 ||
+          !data.jobPostings.every((j: any) => typeof j?.title === "string" && typeof j?.externalPath === "string" && j.externalPath.startsWith("/job/"))) {
+        partial("Workday response failed validation; any earlier pages retained.");
+        if (!jobs.size) throw new Error("Invalid Workday response");
+        return [...jobs.values()];
       }
-
-      if (jobs.length > 0) {
-        return jobs;
+      // Workday commonly sends total: 0 after page one. Preserve the initial total.
+      if (page === 0) expectedTotal = data.total;
+      if (!data.jobPostings.length) { complete = offset >= expectedTotal; break; }
+      let added = 0;
+      for (const raw of data.jobPostings) {
+        if (seen.has(raw.externalPath)) continue;
+        seen.add(raw.externalPath); added++;
+        if (!isMechanicalInternship(raw.title)) continue;
+        const url = base + "/en-US/" + board.site + raw.externalPath;
+        jobs.set(url, { companyName: company.name, companyUrl: base + "/en-US/" + board.site,
+          title: raw.title, location: raw.locationsText || null, url, source: "Workday",
+          postedAt: null, ageDays: null, category: getCategory(raw.title), score: scoreJob(raw.title) });
       }
+      offset += data.jobPostings.length;
+      if (!added) break; // repeated pages must never spin until the request cap
+      if (offset >= expectedTotal) { complete = true; break; }
     }
+    if (!complete) partial("Workday pagination stopped early or reached its cap; earlier pages retained.");
   }
+  return [...jobs.values()];
+}
 
-  return [];
+// Public, listed postings only: https://developers.ashbyhq.com/docs/public-job-posting-api
+export async function fetchAshbyJobs(company: Company): Promise<Job[]> {
+  if (!company.ashby) return [];
+  const data = await fetchJson("https://api.ashbyhq.com/posting-api/job-board/" + encodeURIComponent(company.ashby));
+  if (!data || !Array.isArray(data.jobs) || !data.jobs.every((j: any) => typeof j?.title === "string" && typeof j?.jobUrl === "string")) {
+    throw new Error("Invalid Ashby response");
+  }
+  return data.jobs.filter((j: any) => j.isListed !== false && isMechanicalInternship(j.title)).map((raw: any) => ({
+    companyName: company.name, companyUrl: "https://jobs.ashbyhq.com/" + encodeURIComponent(company.ashby),
+    title: raw.title, location: [raw.location, ...(raw.secondaryLocations ?? []).map((l: any) => l.location)].filter(Boolean).join("; ") || null,
+    url: raw.jobUrl, source: "Ashby", postedAt: null, ageDays: null,
+    // Ashby's publishedAt is a last-published timestamp, not an original posting date.
+    category: getCategory(raw.title), score: scoreJob(raw.title),
+  }));
 }
 
 export async function fetchICIMSJobs(company: Company): Promise<Job[]> {
@@ -558,23 +524,27 @@ export async function getSnapshot(): Promise<{ jobs: Job[]; sources: SourceHealt
     const before = tasks.length;
     add("Greenhouse", company.greenhouse, true, () => fetchGreenhouseJobs(company));
     add("Lever", company.lever, true, () => fetchLeverJobs(company));
-    add("Workday", company.workday, false, () => fetchWorkdayJobs(company));
+    if (typeof company.workday === "string") {
+      sources.push({ company: company.name, source: "Workday", checkedAt: new Date().toISOString(), status: "unconfigured", count: 0, detail: "Legacy tenant guess; needs a verified host and external career-site name." });
+    } else add("Workday", company.workday, false, () => fetchWorkdayJobs(company));
+    add("Ashby", company.ashby, true, () => fetchAshbyJobs(company));
     add("iCIMS", company.icims, false, () => fetchICIMSJobs(company));
     add("PhenomPeople", company.phenom, false, () => fetchPhenomJobs(company));
     add("Rippling", company.custom === "rippling", false, () => fetchRiplingJobs(company));
     add("Tesla Careers", company.custom === "tesla", false, fetchTeslaJobs);
     add("SpaceX Jobs JSON", company.custom === "spacex", false, fetchSpaceXJobs);
     add("Rivian Careers API", company.custom === "rivian", false, fetchRivianJobs);
-    if (tasks.length === before) sources.push({ company: company.name, source: "None", checkedAt: new Date().toISOString(), status: "unconfigured", count: 0, detail: "Target company; no scraper configured." });
+    if (tasks.length === before && !company.workday) sources.push({ company: company.name, source: "None", checkedAt: new Date().toISOString(), status: "unconfigured", count: 0, detail: "Target company; no scraper configured." });
   }
   const results = await mapLimited(tasks, async (task) => {
-    const context = { failures: 0 };
+    const context: { failures: number; partial?: string } = { failures: 0 };
     return requestContext.run(context, async () => {
       let jobs: Job[] = [];
       let status: SourceHealth["status"] = task.complete ? "ok" : "partial";
       let detail = task.complete ? "Complete feed parsed." : "Best-effort source; absence does not establish closure.";
       try {
         jobs = await task.run();
+        if (context.partial) { status = "partial"; detail = context.partial; }
         if (context.failures) { status = jobs.length ? "partial" : "failed"; detail = "One or more requests failed; previous listings retained."; }
       } catch {
         status = "failed";

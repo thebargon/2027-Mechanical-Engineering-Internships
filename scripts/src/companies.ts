@@ -1,8 +1,10 @@
+export interface WorkdayBoard { host: string; tenant: string; site: string }
 export interface Company {
   name: string;
   greenhouse?: string;
   lever?: string;
-  workday?: string;
+  workday?: string | WorkdayBoard;
+  ashby?: string;
   icims?: string;
   phenom?: string;
   custom?: string;
@@ -47,7 +49,7 @@ export const COMPANIES: Company[] = [
   { name: "Qualcomm", lever: "qualcomm" },
   { name: "Boeing", greenhouse: "boeing", lever: "boeing", workday: "boeing", priority: 5 },
   { name: "Lockheed Martin", greenhouse: "lockheedmartin", priority: 5 },
-  { name: "Blue Origin", greenhouse: "blueorigin", lever: "blueorigin", priority: 5 },
+  { name: "Blue Origin", workday: { host: "blueorigin.wd5.myworkdayjobs.com", tenant: "blueorigin", site: "BlueOrigin" }, priority: 5 },
   { name: "GE Aerospace", greenhouse: "geaerospace", priority: 5 },
   { name: "Honeywell", greenhouse: "honeywell", priority: 5 },
   { name: "Cummins", greenhouse: "cummins", priority: 5 },
@@ -68,9 +70,9 @@ export const COMPANIES: Company[] = [
   { name: "Spirit AeroSystems", icims: "fllapscareers1-spirit", priority: 5 },
   { name: "Safran" },
   { name: "Relativity Space" },
-  { name: "Rocket Lab" },
+  { name: "Rocket Lab", greenhouse: "rocketlab" },
   { name: "Joby Aviation" },
-  { name: "Archer Aviation" },
+  { name: "Archer Aviation", greenhouse: "archer56" },
   { name: "Boston Dynamics", greenhouse: "bostondynamics", priority: 5 },
   { name: "Agility Robotics" },
   { name: "Figure AI" },
@@ -84,7 +86,7 @@ export const COMPANIES: Company[] = [
   { name: "GlobalFoundries" },
   { name: "TSMC" },
   { name: "Micron" },
-  { name: "Stryker" },
+  { name: "Stryker", workday: { host: "stryker.wd1.myworkdayjobs.com", tenant: "stryker", site: "StrykerCareers" } },
   { name: "Abbott" },
   { name: "J&J" },
   { name: "Zimmer Biomet" }
@@ -101,5 +103,10 @@ export const COMPANIES: Company[] = [
   { name: "Danaher" },
   { name: "Garmin" },
   { name: "Meta" },
-  { name: "Google" }
+  { name: "Google" },
+  { name: "Air Products", workday: { host: "airproducts.wd5.myworkdayjobs.com", tenant: "airproducts", site: "AP0001" } },
+  { name: "IMEG", workday: { host: "imeg.wd1.myworkdayjobs.com", tenant: "imeg", site: "Imeg_Careers" } },
+  { name: "General Matter", greenhouse: "generalmatter" },
+  { name: "Etched", ashby: "Etched" },
+  { name: "Overview Energy", ashby: "overviewenergy" }
 ];
