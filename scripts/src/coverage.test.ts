@@ -20,10 +20,10 @@ test('SmartRecruiters rejects invalid initial responses instead of claiming empt
  globalThis.fetch=(async()=>Response.json({content:[]})) as typeof fetch;
  await expect(fetchSmartRecruitersJobs(company)).rejects.toThrow('Invalid');
 });
-const row=(id:string,title='Mechanical &amp; Manufacturing Intern')=>`<tr class="data-row"><td><a href="/job/City/Role/${id}/" class="jobTitle-link">${title}</a><a class="jobTitle-link" href="/job/City/Role/${id}/">${title}</a></td><td headers="hdrLocation"><span>Austin, TX</span></td></tr>`;
+const row=(id:string,title='Mechanical &amp; Manufacturing Intern')=>`<tr class="data-row"><td><a href="/job/City/Role/${id}/" class="jobTitle-link">${title}</a><a class="jobTitle-link" href="/job/City/Role/${id}/">${title}</a></td><td headers="hdrLocation"><span>Indianapolis, IN, TX</span></td></tr>`;
 const page=(rows:string,total=2)=>`<span class="paginationLabel">Results <b>1 - 1</b> of <b>${total}</b></span>${rows}`;
 test('SuccessFactors counts desktop and mobile links as one row and decodes titles',()=>{
- const parsed=parseSuccessFactors(page(row('1')),company);expect(parsed.rows).toBe(1);expect(parsed.jobs).toHaveLength(1);expect(parsed.jobs[0].title).toBe('Mechanical & Manufacturing Intern');expect(parsed.jobs[0].location).toBe('Austin, TX');
+ const parsed=parseSuccessFactors(page(row('1')),company);expect(parsed.rows).toBe(1);expect(parsed.jobs).toHaveLength(1);expect(parsed.jobs[0].title).toBe('Mechanical & Manufacturing Intern');expect(parsed.jobs[0].location).toBe('Indianapolis, IN, TX');
  expect(()=>parseSuccessFactors('<html>Access denied</html>',company)).toThrow('Unrecognized');
 });
 test('SuccessFactors advances by rows and deduplicates keyword searches',async()=>{
@@ -32,12 +32,12 @@ test('SuccessFactors advances by rows and deduplicates keyword searches',async()
  expect(await fetchSuccessFactorsJobs(company)).toHaveLength(2);expect(offsets).toEqual(['0','1','0','1']);
 });
 test('Jibe searches without the obsolete Rivian tag and filters unrelated/private postings',async()=>{
- globalThis.fetch=(async u=>{const url=new URL(String(u));expect(url.searchParams.has('tags')).toBe(false);return Response.json({totalCount:3,jobs:[{data:{slug:'1',title:'Mechanical Intern',full_location:'Austin'}},{data:{slug:'2',title:'Electrical Intern'}},{data:{slug:'3',title:'Mechanical Intern',meta_data:{icims:{jps_is_public:false}}}}]});}) as typeof fetch;
+ globalThis.fetch=(async u=>{const url=new URL(String(u));expect(url.searchParams.has('tags')).toBe(false);return Response.json({totalCount:3,jobs:[{data:{slug:'1',title:'Mechanical Intern',full_location:'Indianapolis, IN'}},{data:{slug:'2',title:'Electrical Intern'}},{data:{slug:'3',title:'Mechanical Intern',meta_data:{icims:{jps_is_public:false}}}}]});}) as typeof fetch;
  const jobs=await fetchJibeJobs(company);expect(jobs).toHaveLength(1);expect(jobs[0].url).toBe('https://careers.example.com/jobs/1');
 });
 import {getSnapshot} from './scraper';
 test('shared RTX coverage does not duplicate or mislabel parent jobs',async()=>{
- globalThis.fetch=(async()=>Response.json({jobs:[{title:'Mechanical Intern',absolute_url:'https://example.com/job/1',location:{name:'Boston'},content:''}]})) as typeof fetch;
+ globalThis.fetch=(async()=>Response.json({jobs:[{title:'Mechanical Intern',absolute_url:'https://example.com/job/1',location:{name:'Irvine, CA'},content:''}]})) as typeof fetch;
  const snapshot=await getSnapshot([{name:'RTX',greenhouse:'example'},{name:'Raytheon',coveredBy:'RTX'}]);
  expect(snapshot.jobs.map(j=>j.companyName)).toEqual(['RTX']);expect(snapshot.sources.find(s=>s.company==='Raytheon')?.status).toBe('covered');
 });

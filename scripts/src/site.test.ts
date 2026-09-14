@@ -6,8 +6,8 @@ import { renderBrowser } from "./site";
 // Minimal in-memory document for exercising the generated script without a browser.
 function setup() {
   const jobs = [
-    { companyName: "Alpha", companyUrl: null, title: "Mechanical Intern 2027", location: "Boston", url: "https://example.com/1", source: "Lever", postedAt: null, ageDays: null, category: "mechanical_design", score: 5 },
-    { companyName: "Beta", companyUrl: null, title: "Thermal Intern 2026", location: "Austin", url: "https://example.com/2", source: "Lever", postedAt: null, ageDays: null, category: "thermal_fluids", score: 4 },
+    { companyName: "Alpha", companyUrl: null, title: "Mechanical Intern 2027", location: "Irvine, CA", url: "https://example.com/1", source: "Lever", postedAt: null, ageDays: null, category: "mechanical_design", score: 5 },
+    { companyName: "Beta", companyUrl: null, title: "Thermal Intern 2026", location: "Indianapolis, IN", url: "https://example.com/2", source: "Lever", postedAt: null, ageDays: null, category: "thermal_fluids", score: 4 },
   ];
   const snapshot = reconcile(emptySnapshot(), jobs, [], "2026-09-04T00:00:00Z");
   class Element {
@@ -42,7 +42,7 @@ test("browsing defaults to current term and supports search, company, location, 
   expect(nodes.results.children[0].textContent).toContain("No listings match");
   nodes.reset.handlers.click();
   expect(nodes.count.textContent).toBe("1 matching listing");
-  nodes.location.value = "Austin";
+  nodes.location.value = "Indianapolis, IN";
   nodes.filters.handlers.input();
   expect(nodes.count.textContent).toBe("0 matching listings");
 });

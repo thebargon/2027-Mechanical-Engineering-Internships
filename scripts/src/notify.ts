@@ -1,3 +1,4 @@
+import { isPreferredLocation } from "./locations";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -91,7 +92,7 @@ export async function notifyNewJobs(jobs: Job[]) {
   let changed = false;
 
   for (const job of jobs) {
-    if (!isMechanicalInternship(job.title)) continue;
+    if (!isMechanicalInternship(job.title) || !isPreferredLocation(job.location)) continue;
     const normalized = normalizeUrl(job.url || `${job.companyName}-${job.title}`);
     if (notifiedUrls.has(normalized)) {
       continue;

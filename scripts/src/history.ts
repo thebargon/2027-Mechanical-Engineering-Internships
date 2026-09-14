@@ -1,3 +1,4 @@
+import { isPreferredLocation } from "./locations";
 import type { Job } from "./types";
 import { isMechanicalInternship } from "./filters";
 
@@ -44,7 +45,7 @@ export function jobId(job: Job): string {
   return JSON.stringify([job.companyName, job.source, url.href, job.title.trim(), job.location ?? ""]);
 }
 export function reconcile(previous: Snapshot, jobs: Job[], sources: SourceHealth[], now: string): Snapshot {
-  const inScope = (job: Job) => isMechanicalInternship(job.title);
+  const inScope = (job: Job) => isMechanicalInternship(job.title) && isPreferredLocation(job.location);
   const records = new Map(previous.jobs.filter(inScope).map((job) => [job.id, { ...job, term: termFor(job.title) }]));
   const observed = new Set<string>();
   for (const job of jobs) {
@@ -75,7 +76,7 @@ export function emptySnapshot(): Snapshot { return { version: 1, updatedAt: null
 // Reapply changed eligibility rules offline without inventing a fresh check date,
 // changing source health, or advancing the closure counters.
 export function filterSnapshot(snapshot: Snapshot): Snapshot {
-  return { ...snapshot, jobs: snapshot.jobs.filter((job) => isMechanicalInternship(job.title)) };
+  return { ...snapshot, jobs: snapshot.jobs.filter((job) => isMechanicalInternship(job.title) && isPreferredLocation(job.location)) };
 }
 
 export function readSnapshot(raw: string): Snapshot {

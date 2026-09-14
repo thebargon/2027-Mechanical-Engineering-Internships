@@ -1,3 +1,4 @@
+import { isPreferredLocation } from "./locations";
 import { Job } from "./types";
 import { Company, COMPANIES } from "./companies";
 import { request, requestContext, mapLimited } from "./http";
@@ -443,7 +444,7 @@ export async function getSnapshot(companies: Company[] = COMPANIES): Promise<{ j
       let status: SourceHealth["status"] = task.complete ? "ok" : "partial";
       let detail = task.complete ? "Complete feed parsed." : "Best-effort source; absence does not establish closure.";
       try {
-        jobs = await task.run();
+        jobs = (await task.run()).filter((job) => isPreferredLocation(job.location));
         if (context.partial) { status = "partial"; detail = context.partial; }
         if (context.failures) { status = jobs.length ? "partial" : "failed"; detail = `${context.lastError ?? "Request failed"}; previous listings retained.`; }
       } catch (error) {

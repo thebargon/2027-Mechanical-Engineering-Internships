@@ -1,3 +1,4 @@
+import { locationPriority } from "./locations";
 import { safeUrl, type Listing, type Snapshot } from "./history";
 
 export function escapeHtml(text: unknown): string {
@@ -16,7 +17,7 @@ export function listingTable(jobs: Listing[]): string {
   }).join("\n");
 }
 export function renderReadme(snapshot: Snapshot): string {
-  const active = snapshot.jobs.filter((j) => j.status !== "closed").sort((a, b) => b.score - a.score || (b.lastSeenAt ?? "").localeCompare(a.lastSeenAt ?? "") || a.title.localeCompare(b.title));
+  const active = snapshot.jobs.filter((j) => j.status !== "closed").sort((a, b) => locationPriority(a.location) - locationPriority(b.location) || b.score - a.score || (b.lastSeenAt ?? "").localeCompare(a.lastSeenAt ?? "") || a.title.localeCompare(b.title));
   const failed = snapshot.sources.filter((s) => s.status === "failed").length;
   return `Last checked: **${snapshot.updatedAt ?? "Not yet checked"}** · ${failed} failed sources. See [source health](data/sources.md) and [archive](ARCHIVE.md).\n\n### Confirmed 2027 in title\n\n${listingTable(active.filter((j) => j.term === "2027"))}\n\n### Year unspecified — verify the term with the employer\n\n${listingTable(active.filter((j) => j.term === "unspecified"))}\n\nOther-year roles are excluded from these tables and remain available in the browsing page and history. “Last verified” means last seen in a source feed, not a guarantee the employer still accepts applications.`;
 }

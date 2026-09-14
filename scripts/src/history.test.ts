@@ -4,7 +4,7 @@ import type { Job } from "./types";
 import { listingTable, replaceTable } from "./render";
 import { renderBrowser } from "./site";
 
-const job: Job = { companyName: "Example", companyUrl: null, title: "Mechanical Intern 2027", location: "Boston", url: "https://example.com/job?id=1", source: "Lever", postedAt: null, ageDays: null, category: "mechanical_design", score: 5 };
+const job: Job = { companyName: "Example", companyUrl: null, title: "Mechanical Intern 2027", location: "Irvine, CA", url: "https://example.com/job?id=1", source: "Lever", postedAt: null, ageDays: null, category: "mechanical_design", score: 5 };
 const health = (status: SourceHealth["status"]): SourceHealth[] => [{ company: "Example", source: "Lever", checkedAt: "2026-09-04T12:00:00Z", status, count: 0, detail: "Test" }];
 const first = () => reconcile(emptySnapshot(), [job], health("ok"), "2026-09-04T12:00:00Z");
 
