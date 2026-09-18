@@ -4,4 +4,4 @@ Closed means absent from a complete feed on two different UTC days. Reappearing 
 
 | Company | Discipline | Position | Location | Status | Posted | First found | Last verified | Link |
 |---|---|---|---|---|---|---|---|---|
-| No matching listings yet. | | | | | | | | |
+| Hermeus | Manufacturing | Manufacturing Engineering Intern - Fall 2026 | Los Angeles, CA | closed | 2025-09-30 | 2026-09-04 | 2026-09-16 | <a href="https://jobs.lever.co/hermeus/a1f3aa29-72ea-4843-b2ea-801f3bef73ae">View job</a> |
