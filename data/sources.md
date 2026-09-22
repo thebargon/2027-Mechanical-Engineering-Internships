@@ -1,103 +1,103 @@
 # Source health
 
-Last attempted update: 2026-09-21T17:52:19.635Z. “Partial” sources cannot establish that missing jobs are closed. “Unconfigured” companies are targets, not covered sources.
+Last attempted update: 2026-09-22T16:17:09.231Z. “Partial” sources cannot establish that missing jobs are closed. “Unconfigured” companies are targets, not covered sources.
 
 | Company | Source | Result | Matches | Checked | Notes |
 |---|---|---|---|---|---|
-| 3M | Workday | unconfigured | 0 | 2026-09-21T17:48:21.425Z | Legacy tenant guess; needs a verified host and external career-site name. |
-| Abbott | Workday | failed | 0 | 2026-09-21T17:51:23.588Z | Invalid Workday response; previous listings retained. |
-| AeroVironment | None | unconfigured | 0 | 2026-09-21T17:48:21.426Z | Target company; no scraper configured. |
-| Agility Robotics | None | unconfigured | 0 | 2026-09-21T17:48:21.425Z | Target company; no scraper configured. |
-| Air Products | Workday | partial | 0 | 2026-09-21T17:51:58.035Z | Best-effort source; absence does not establish closure. |
-| AMD | iCIMS Careers API | partial | 0 | 2026-09-21T17:48:42.205Z | Best-effort source; absence does not establish closure. |
-| Anduril | Greenhouse | ok | 3 | 2026-09-21T17:48:29.590Z | Complete feed parsed. |
-| Apple | None | unconfigured | 0 | 2026-09-21T17:48:21.425Z | Target company; no scraper configured. |
-| Applied Materials | Workday | partial | 2 | 2026-09-21T17:51:08.686Z | Workday response failed validation; any earlier pages retained. |
-| Archer Aviation | Greenhouse | ok | 0 | 2026-09-21T17:51:09.979Z | Complete feed parsed. |
-| ASML | None | unconfigured | 0 | 2026-09-21T17:48:21.425Z | Target company; no scraper configured. |
-| Atlas Copco | None | unconfigured | 0 | 2026-09-21T17:48:21.426Z | Target company; no scraper configured. |
-| BAE Systems | Workday | unconfigured | 0 | 2026-09-21T17:48:21.425Z | Legacy tenant guess; needs a verified host and external career-site name. |
-| Bell Flight | None | unconfigured | 0 | 2026-09-21T17:48:21.426Z | Target company; no scraper configured. |
-| Blue Origin | Workday | partial | 1 | 2026-09-21T17:50:18.362Z | Best-effort source; absence does not establish closure. |
-| BMW | None | unconfigured | 0 | 2026-09-21T17:48:21.425Z | Target company; no scraper configured. |
-| Boeing | Workday | partial | 0 | 2026-09-21T17:48:45.721Z | Best-effort source; absence does not establish closure. |
-| Boom Supersonic | Rippling | partial | 0 | 2026-09-21T17:51:08.355Z | Best-effort source; absence does not establish closure. |
-| Bosch | SmartRecruiters | ok | 0 | 2026-09-21T17:48:56.613Z | Complete feed parsed. |
-| Boston Dynamics | Workday | partial | 0 | 2026-09-21T17:51:15.922Z | Best-effort source; absence does not establish closure. |
-| Boston Scientific | SuccessFactors | partial | 1 | 2026-09-21T17:50:39.703Z | Best-effort source; absence does not establish closure. |
-| Carrier | None | unconfigured | 0 | 2026-09-21T17:48:21.426Z | Target company; no scraper configured. |
-| Caterpillar | Workday | partial | 0 | 2026-09-21T17:50:30.394Z | Best-effort source; absence does not establish closure. |
-| CNH Industrial | None | unconfigured | 0 | 2026-09-21T17:48:21.425Z | Target company; no scraper configured. |
-| Collins Aerospace | Shared employer board | covered | 0 | 2026-09-21T17:50:32.722Z | Tracked under RTX (partial); shared results are not duplicated or relabeled as this subsidiary. |
-| Cummins | Greenhouse | failed | 0 | 2026-09-21T17:49:22.640Z | HTTP 404; previous listings retained. |
-| Danaher | None | unconfigured | 0 | 2026-09-21T17:48:21.426Z | Target company; no scraper configured. |
-| Dyson | None | unconfigured | 0 | 2026-09-21T17:48:21.425Z | Target company; no scraper configured. |
-| Eaton | Workday | unconfigured | 0 | 2026-09-21T17:48:21.425Z | Legacy tenant guess; needs a verified host and external career-site name. |
-| Edwards Lifesciences | Workday | partial | 0 | 2026-09-21T17:51:41.736Z | Best-effort source; absence does not establish closure. |
-| Emerson | None | unconfigured | 0 | 2026-09-21T17:48:21.425Z | Target company; no scraper configured. |
-| Etched | Ashby | ok | 1 | 2026-09-21T17:51:58.435Z | Complete feed parsed. |
-| Figure AI | None | unconfigured | 0 | 2026-09-21T17:48:21.425Z | Target company; no scraper configured. |
-| Ford | Greenhouse | failed | 0 | 2026-09-21T17:50:20.384Z | HTTP 404; previous listings retained. |
-| Ford | Lever | failed | 0 | 2026-09-21T17:50:20.781Z | HTTP 404; previous listings retained. |
-| Garmin | None | unconfigured | 0 | 2026-09-21T17:48:21.426Z | Target company; no scraper configured. |
-| GE Aerospace | Workday | partial | 0 | 2026-09-21T17:49:21.578Z | Best-effort source; absence does not establish closure. |
-| General Matter | Greenhouse | ok | 3 | 2026-09-21T17:51:58.139Z | Complete feed parsed. |
-| General Motors | Workday | partial | 0 | 2026-09-21T17:51:19.646Z | Workday response failed validation; any earlier pages retained. |
-| GlobalFoundries | None | unconfigured | 0 | 2026-09-21T17:48:21.426Z | Target company; no scraper configured. |
-| Google | None | unconfigured | 0 | 2026-09-21T17:48:21.426Z | Target company; no scraper configured. |
-| Hermeus | Lever | ok | 7 | 2026-09-21T17:51:07.834Z | Complete feed parsed. |
-| Honda | None | unconfigured | 0 | 2026-09-21T17:48:21.425Z | Target company; no scraper configured. |
-| Honeywell | Greenhouse | failed | 0 | 2026-09-21T17:49:22.141Z | HTTP 404; previous listings retained. |
-| Honeywell Aerospace | Greenhouse | failed | 0 | 2026-09-21T17:51:07.364Z | HTTP 404; previous listings retained. |
-| Hyundai | None | unconfigured | 0 | 2026-09-21T17:48:21.425Z | Target company; no scraper configured. |
-| IMEG | Workday | partial | 1 | 2026-09-21T17:52:03.804Z | Best-effort source; absence does not establish closure. |
-| Intel | Workday | partial | 0 | 2026-09-21T17:48:39.051Z | Workday response failed validation; any earlier pages retained. |
-| Intrinsic | None | unconfigured | 0 | 2026-09-21T17:48:21.425Z | Target company; no scraper configured. |
-| Intuitive Surgical | SmartRecruiters | ok | 2 | 2026-09-21T17:51:28.731Z | Complete feed parsed. |
-| J&amp;J | None | unconfigured | 0 | 2026-09-21T17:48:21.426Z | Target company; no scraper configured. |
-| Joby Aviation | None | unconfigured | 0 | 2026-09-21T17:48:21.425Z | Target company; no scraper configured. |
-| John Deere | SuccessFactors | partial | 0 | 2026-09-21T17:48:27.611Z | Best-effort source; absence does not establish closure. |
-| Johnson Controls | None | unconfigured | 0 | 2026-09-21T17:48:21.425Z | Target company; no scraper configured. |
-| KLA | None | unconfigured | 0 | 2026-09-21T17:48:21.426Z | Target company; no scraper configured. |
-| Komatsu | None | unconfigured | 0 | 2026-09-21T17:48:21.425Z | Target company; no scraper configured. |
-| L3Harris | None | unconfigured | 0 | 2026-09-21T17:48:21.426Z | Target company; no scraper configured. |
-| Lam Research | Greenhouse | failed | 0 | 2026-09-21T17:51:06.870Z | HTTP 404; previous listings retained. |
-| Lockheed Martin | Greenhouse | failed | 0 | 2026-09-21T17:48:46.166Z | HTTP 404; previous listings retained. |
-| Lucid | Greenhouse | ok | 0 | 2026-09-21T17:50:31.054Z | Complete feed parsed. |
-| Medtronic | Workday | failed | 0 | 2026-09-21T17:51:06.631Z | Invalid Workday response; previous listings retained. |
-| Mercedes-Benz | None | unconfigured | 0 | 2026-09-21T17:48:21.425Z | Target company; no scraper configured. |
-| Meta | None | unconfigured | 0 | 2026-09-21T17:48:21.426Z | Target company; no scraper configured. |
-| Micron | None | unconfigured | 0 | 2026-09-21T17:48:21.426Z | Target company; no scraper configured. |
-| Moog | Workday | unconfigured | 0 | 2026-09-21T17:48:21.425Z | Legacy tenant guess; needs a verified host and external career-site name. |
-| Northrop Grumman | None | unconfigured | 0 | 2026-09-21T17:48:21.425Z | Target company; no scraper configured. |
-| NVIDIA | Workday | partial | 1 | 2026-09-21T17:48:35.395Z | Workday response failed validation; any earlier pages retained. |
-| Overview Energy | Ashby | ok | 0 | 2026-09-21T17:51:58.904Z | Complete feed parsed. |
-| Parker Hannifin | Workday | unconfigured | 0 | 2026-09-21T17:48:21.426Z | Legacy tenant guess; needs a verified host and external career-site name. |
-| Polaris | None | unconfigured | 0 | 2026-09-21T17:48:21.425Z | Target company; no scraper configured. |
-| Pratt &amp; Whitney | Shared employer board | covered | 0 | 2026-09-21T17:50:32.722Z | Tracked under RTX (partial); shared results are not duplicated or relabeled as this subsidiary. |
-| Qualcomm | Lever | failed | 0 | 2026-09-21T17:48:42.725Z | HTTP 404; previous listings retained. |
-| Raytheon | Shared employer board | covered | 0 | 2026-09-21T17:50:32.722Z | Tracked under RTX (partial); shared results are not duplicated or relabeled as this subsidiary. |
-| Relativity Space | None | unconfigured | 0 | 2026-09-21T17:48:21.425Z | Target company; no scraper configured. |
-| Rivian | Rivian Careers API | partial | 0 | 2026-09-21T17:48:23.019Z | Best-effort source; absence does not establish closure. |
-| Rocket Lab | Greenhouse | ok | 13 | 2026-09-21T17:51:09.478Z | Complete feed parsed. |
-| Rockwell Automation | None | unconfigured | 0 | 2026-09-21T17:48:21.425Z | Target company; no scraper configured. |
-| Rolls Royce | Workday | unconfigured | 0 | 2026-09-21T17:48:21.425Z | Legacy tenant guess; needs a verified host and external career-site name. |
-| RTX | Workday | partial | 0 | 2026-09-21T17:50:32.722Z | Workday pagination stopped early or reached its cap; earlier pages retained. |
-| Safran | None | unconfigured | 0 | 2026-09-21T17:48:21.425Z | Target company; no scraper configured. |
-| Schneider Electric | Workday | unconfigured | 0 | 2026-09-21T17:48:21.425Z | Legacy tenant guess; needs a verified host and external career-site name. |
-| Siemens | None | unconfigured | 0 | 2026-09-21T17:48:21.425Z | Target company; no scraper configured. |
-| Skydio | None | unconfigured | 0 | 2026-09-21T17:48:21.426Z | Target company; no scraper configured. |
-| SpaceX | SpaceX Jobs JSON | partial | 0 | 2026-09-21T17:48:22.011Z | Best-effort source; absence does not establish closure. |
-| Spirit AeroSystems | iCIMS | partial | 0 | 2026-09-21T17:51:09.127Z | Best-effort source; absence does not establish closure. |
-| Stryker | Workday | partial | 0 | 2026-09-21T17:52:19.634Z | Workday response failed validation; any earlier pages retained. |
-| Tesla | Tesla Careers | failed | 0 | 2026-09-21T17:48:21.752Z | HTTP 403; previous listings retained. |
-| Textron | None | unconfigured | 0 | 2026-09-21T17:48:21.425Z | Target company; no scraper configured. |
-| Tokyo Electron | None | unconfigured | 0 | 2026-09-21T17:48:21.426Z | Target company; no scraper configured. |
-| Toyota | Workday | unconfigured | 0 | 2026-09-21T17:48:21.425Z | Legacy tenant guess; needs a verified host and external career-site name. |
-| Trane Technologies | None | unconfigured | 0 | 2026-09-21T17:48:21.425Z | Target company; no scraper configured. |
-| TSMC | None | unconfigured | 0 | 2026-09-21T17:48:21.426Z | Target company; no scraper configured. |
-| Virgin Galactic | SuccessFactors | partial | 0 | 2026-09-21T17:51:11.067Z | Best-effort source; absence does not establish closure. |
-| Volvo | None | unconfigured | 0 | 2026-09-21T17:48:21.425Z | Target company; no scraper configured. |
-| Whirlpool | None | unconfigured | 0 | 2026-09-21T17:48:21.425Z | Target company; no scraper configured. |
-| Zimmer Biomet | None | unconfigured | 0 | 2026-09-21T17:48:21.426Z | Target company; no scraper configured. |
-| Zipline | None | unconfigured | 0 | 2026-09-21T17:48:21.426Z | Target company; no scraper configured. |
+| 3M | Workday | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Legacy tenant guess; needs a verified host and external career-site name. |
+| Abbott | Workday | failed | 0 | 2026-09-22T16:16:21.900Z | Invalid Workday response; previous listings retained. |
+| AeroVironment | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| Agility Robotics | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| Air Products | Workday | partial | 0 | 2026-09-22T16:16:56.366Z | Best-effort source; absence does not establish closure. |
+| AMD | iCIMS Careers API | partial | 0 | 2026-09-22T16:12:43.953Z | Best-effort source; absence does not establish closure. |
+| Anduril | Greenhouse | ok | 3 | 2026-09-22T16:12:14.624Z | Complete feed parsed. |
+| Apple | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| Applied Materials | Workday | partial | 2 | 2026-09-22T16:15:13.043Z | Workday response failed validation; any earlier pages retained. |
+| Archer Aviation | Greenhouse | ok | 0 | 2026-09-22T16:15:17.940Z | Complete feed parsed. |
+| ASML | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| Atlas Copco | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| BAE Systems | Workday | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Legacy tenant guess; needs a verified host and external career-site name. |
+| Bell Flight | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| Blue Origin | Workday | partial | 1 | 2026-09-22T16:14:13.821Z | Best-effort source; absence does not establish closure. |
+| BMW | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| Boeing | Workday | partial | 0 | 2026-09-22T16:12:46.587Z | Best-effort source; absence does not establish closure. |
+| Boom Supersonic | Rippling | partial | 0 | 2026-09-22T16:15:14.962Z | Best-effort source; absence does not establish closure. |
+| Bosch | SmartRecruiters | partial | 0 | 2026-09-22T16:12:41.019Z | SmartRecruiters returned an empty or repeated page before its total; earlier pages retained. |
+| Boston Dynamics | Workday | partial | 0 | 2026-09-22T16:15:22.342Z | Best-effort source; absence does not establish closure. |
+| Boston Scientific | SuccessFactors | partial | 0 | 2026-09-22T16:14:34.138Z | Best-effort source; absence does not establish closure. |
+| Carrier | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| Caterpillar | Workday | partial | 0 | 2026-09-22T16:14:28.066Z | Best-effort source; absence does not establish closure. |
+| CNH Industrial | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| Collins Aerospace | Shared employer board | covered | 0 | 2026-09-22T16:12:23.484Z | Tracked under RTX (partial); shared results are not duplicated or relabeled as this subsidiary. |
+| Cummins | Greenhouse | failed | 0 | 2026-09-22T16:13:25.722Z | HTTP 404; previous listings retained. |
+| Danaher | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| Dyson | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| Eaton | Workday | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Legacy tenant guess; needs a verified host and external career-site name. |
+| Edwards Lifesciences | Workday | partial | 0 | 2026-09-22T16:16:45.604Z | Best-effort source; absence does not establish closure. |
+| Emerson | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| Etched | Ashby | ok | 1 | 2026-09-22T16:16:56.738Z | Complete feed parsed. |
+| Figure AI | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| Ford | Greenhouse | failed | 0 | 2026-09-22T16:14:14.008Z | HTTP 404; previous listings retained. |
+| Ford | Lever | failed | 0 | 2026-09-22T16:14:14.313Z | HTTP 404; previous listings retained. |
+| Garmin | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| GE Aerospace | Workday | partial | 0 | 2026-09-22T16:13:25.218Z | Best-effort source; absence does not establish closure. |
+| General Matter | Greenhouse | ok | 3 | 2026-09-22T16:16:56.521Z | Complete feed parsed. |
+| General Motors | Workday | partial | 0 | 2026-09-22T16:15:32.771Z | Best-effort source; absence does not establish closure. |
+| GlobalFoundries | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| Google | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| Hermeus | Lever | ok | 5 | 2026-09-22T16:15:14.633Z | Complete feed parsed. |
+| Honda | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| Honeywell | Greenhouse | failed | 0 | 2026-09-22T16:13:25.470Z | HTTP 404; previous listings retained. |
+| Honeywell Aerospace | Greenhouse | failed | 0 | 2026-09-22T16:15:13.624Z | HTTP 404; previous listings retained. |
+| Hyundai | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| IMEG | Workday | partial | 2 | 2026-09-22T16:17:09.230Z | Best-effort source; absence does not establish closure. |
+| Intel | Workday | partial | 0 | 2026-09-22T16:13:03.368Z | Best-effort source; absence does not establish closure. |
+| Intrinsic | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| Intuitive Surgical | SmartRecruiters | ok | 2 | 2026-09-22T16:16:29.962Z | Complete feed parsed. |
+| J&amp;J | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| Joby Aviation | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| John Deere | SuccessFactors | partial | 0 | 2026-09-22T16:12:12.715Z | Best-effort source; absence does not establish closure. |
+| Johnson Controls | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| KLA | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| Komatsu | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| L3Harris | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| Lam Research | Greenhouse | failed | 0 | 2026-09-22T16:15:13.370Z | HTTP 404; previous listings retained. |
+| Lockheed Martin | Greenhouse | failed | 0 | 2026-09-22T16:12:46.979Z | HTTP 404; previous listings retained. |
+| Lucid | Greenhouse | ok | 0 | 2026-09-22T16:14:25.244Z | Complete feed parsed. |
+| Medtronic | Workday | partial | 0 | 2026-09-22T16:16:25.514Z | Best-effort source; absence does not establish closure. |
+| Mercedes-Benz | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| Meta | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| Micron | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| Moog | Workday | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Legacy tenant guess; needs a verified host and external career-site name. |
+| Northrop Grumman | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| NVIDIA | Workday | partial | 1 | 2026-09-22T16:14:24.645Z | Workday response failed validation; any earlier pages retained. |
+| Overview Energy | Ashby | ok | 0 | 2026-09-22T16:16:57.184Z | Complete feed parsed. |
+| Parker Hannifin | Workday | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Legacy tenant guess; needs a verified host and external career-site name. |
+| Polaris | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| Pratt &amp; Whitney | Shared employer board | covered | 0 | 2026-09-22T16:12:23.484Z | Tracked under RTX (partial); shared results are not duplicated or relabeled as this subsidiary. |
+| Qualcomm | Lever | failed | 0 | 2026-09-22T16:12:44.332Z | HTTP 404; previous listings retained. |
+| Raytheon | Shared employer board | covered | 0 | 2026-09-22T16:12:23.484Z | Tracked under RTX (partial); shared results are not duplicated or relabeled as this subsidiary. |
+| Relativity Space | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| Rivian | Rivian Careers API | partial | 0 | 2026-09-22T16:12:09.486Z | Best-effort source; absence does not establish closure. |
+| Rocket Lab | Greenhouse | ok | 15 | 2026-09-22T16:15:17.707Z | Complete feed parsed. |
+| Rockwell Automation | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| Rolls Royce | Workday | unconfigured | 0 | 2026-09-22T16:12:08.155Z | Legacy tenant guess; needs a verified host and external career-site name. |
+| RTX | Workday | partial | 0 | 2026-09-22T16:12:23.484Z | Workday response failed validation; any earlier pages retained. |
+| Safran | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| Schneider Electric | Workday | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Legacy tenant guess; needs a verified host and external career-site name. |
+| Siemens | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| Skydio | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| SpaceX | SpaceX Jobs JSON | partial | 0 | 2026-09-22T16:12:08.591Z | Best-effort source; absence does not establish closure. |
+| Spirit AeroSystems | iCIMS | partial | 0 | 2026-09-22T16:15:17.051Z | Best-effort source; absence does not establish closure. |
+| Stryker | Workday | partial | 0 | 2026-09-22T16:17:05.856Z | Best-effort source; absence does not establish closure. |
+| Tesla | Tesla Careers | failed | 0 | 2026-09-22T16:12:08.549Z | HTTP 403; previous listings retained. |
+| Textron | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| Tokyo Electron | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| Toyota | Workday | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Legacy tenant guess; needs a verified host and external career-site name. |
+| Trane Technologies | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| TSMC | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| Virgin Galactic | SuccessFactors | partial | 0 | 2026-09-22T16:15:16.367Z | Best-effort source; absence does not establish closure. |
+| Volvo | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| Whirlpool | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| Zimmer Biomet | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
+| Zipline | None | unconfigured | 0 | 2026-09-22T16:12:08.156Z | Target company; no scraper configured. |
