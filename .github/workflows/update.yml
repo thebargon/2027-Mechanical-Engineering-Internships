@@ -5,7 +5,7 @@ permissions:
 
 concurrency:
   group: update-me-internships
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 on:
   schedule:
@@ -14,7 +14,7 @@ on:
 
 jobs:
   update-jobs:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
 
     steps:
@@ -22,6 +22,7 @@ jobs:
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
+          ref: main
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
@@ -40,18 +41,38 @@ jobs:
         run: bun run generate
         working-directory: scripts
 
-      - name: Commit changes
+      - name: Commit and push changes
+        shell: bash
         run: |
+          set -euo pipefail
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md ARCHIVE.md data/listings.json data/sources.md docs/index.html
 
-          if git diff --staged --quiet; then
-            echo "No internship changes found."
-            exit 0
-          fi
+          for attempt in 1 2 3; do
+            git add README.md ARCHIVE.md data/listings.json data/sources.md docs/index.html
+            if git diff --staged --quiet; then
+              echo "No internship changes found."
+              exit 0
+            fi
+            git commit -m "chore: update mechanical engineering internships"
+            if git push origin HEAD:main; then
+              exit 0
+            fi
 
-          git commit -m "chore: update mechanical engineering internships"
+            # Only retry a branch race, not a permissions or network failure.
+            git fetch origin main
+            if git merge-base --is-ancestor origin/main HEAD; then
+              echo "::error::Push failed without a newer remote commit. Check repository write permissions and connectivity."
+              exit 1
+            fi
+            if [ "$attempt" -eq 3 ]; then
+              echo "::error::Main changed during all three attempts. No remote commits were overwritten."
+              exit 1
+            fi
 
-      - name: Push changes
-        run: git push origin HEAD:main
+            # This is the disposable Actions checkout. Rebuild from the new code
+            # and history instead of forcing a push or merging generated JSON.
+            test "$GITHUB_ACTIONS" = "true"
+            git reset --hard origin/main
+            (cd scripts && bun install --frozen-lockfile && bun test && bun run generate)
+          done
