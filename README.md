@@ -62,7 +62,7 @@ Personal application notes belong in the ignored `private/` folder or a separate
 Geographic scope: California and Indiana only, prioritized as Los Angeles/Orange County, the rest of California, then Indiana. Unspecified locations, generic remote roles, and unresolved multi-location postings are excluded.
 
 <!-- JOB_TABLE_START -->
-Last checked: **2026-09-24T00:24:34.368Z** · 11 failed sources. See [source health](data/sources.md) and [archive](ARCHIVE.md).
+Last checked: **2026-09-24T16:31:16.402Z** · 11 failed sources. See [source health](data/sources.md) and [archive](ARCHIVE.md).
 
 ### Confirmed 2027 in title
 
@@ -106,6 +106,7 @@ Last checked: **2026-09-24T00:24:34.368Z** · 11 failed sources. See [source hea
 |---|---|---|---|---|---|---|---|---|
 | Blue Origin | Mechanical Design | Mechanical Engineering Co-Op (Fixed Term) | Los Angeles, CA | open | Unknown | 2026-09-10 | 2026-09-24 | <a href="https://blueorigin.wd5.myworkdayjobs.com/en-US/BlueOrigin/job/Los-Angeles-CA/Mechanical-Engineering-Co-Op--Fixed-Term-_R71542">View job</a> |
 | IMEG | Mechanical Design | Mechanical Engineering Intern &#124; Anaheim, CA | Anaheim, CA | open | Unknown | 2026-09-22 | 2026-09-24 | <a href="https://imeg.wd1.myworkdayjobs.com/en-US/Imeg_Careers/job/Anaheim-CA/Mechanical-Engineering-Intern---Anaheim--CA_R-16751">View job</a> |
+| Rivian | Automotive | Engineering Intern - Powertrain Testing | Tustin, California | open | Unknown | 2026-09-24 | 2026-09-24 | <a href="https://careers.rivian.com/jobs/33872">View job</a> |
 | Intuitive Surgical | Mechanical Design | Manufacturing/Equipment/Supplier Engineering Intern (Mechanical or Biomedical Engineering Majors) | Sunnyvale, CA, United States | open | Unknown | 2026-09-05 | 2026-09-24 | <a href="https://jobs.smartrecruiters.com/Intuitive/744000147092239">View job</a> |
 | Intuitive Surgical | Mechanical Design | Mechanical Engineering Intern | Sunnyvale, CA, United States | open | Unknown | 2026-09-05 | 2026-09-24 | <a href="https://jobs.smartrecruiters.com/Intuitive/744000147091674">View job</a> |
 | IMEG | Mechanical Design | Mechanical Engineering Intern &#124; Ontario, CA | Ontario, California | open | Unknown | 2026-09-15 | 2026-09-24 | <a href="https://imeg.wd1.myworkdayjobs.com/en-US/Imeg_Careers/job/Ontario-California/Mechanical-Engineering-Intern---Ontario--CA_R-16414">View job</a> |
