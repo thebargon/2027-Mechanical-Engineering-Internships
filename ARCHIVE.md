@@ -13,3 +13,4 @@ Closed means absent from a complete feed on two different UTC days. Reappearing 
 | Rocket Lab | Aerospace | Propulsion Intern Spring 2027 | Long Beach, CA | closed | Unknown | 2026-09-11 | 2026-10-22 | <a href="https://job-boards.greenhouse.io/rocketlab/jobs/7986790003">View job</a> |
 | Rocket Lab | Aerospace | Propulsion Intern Summer 2027 | Long Beach, CA | closed | Unknown | 2026-09-11 | 2026-10-12 | <a href="https://job-boards.greenhouse.io/rocketlab/jobs/7986792003">View job</a> |
 | Etched | Thermal Fluids | Mechancial / Thermal Intern | San Jose | closed | Unknown | 2026-09-18 | 2026-10-04 | <a href="https://jobs.ashbyhq.com/Etched/f05e3218-5ec7-41d1-bc99-bb7014422229">View job</a> |
+| Rocket Lab | Thermal Fluids | Thermal Engineering Intern Summer 2027 | Long Beach, CA | closed | Unknown | 2026-09-22 | 2026-10-26 | <a href="https://job-boards.greenhouse.io/rocketlab/jobs/8000958003">View job</a> |
