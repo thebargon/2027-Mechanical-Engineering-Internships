@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-21T18:47:04.616Z",
+  "updatedAt": "2026-11-22T19:06:48.457Z",
   "jobs": [
     {
       "companyName": "Hermeus",
@@ -52,14 +52,14 @@
       "url": "https://jobs.lever.co/hermeus/2cbb75f7-a040-47b2-a442-d9cc1faedb11",
       "source": "Lever",
       "postedAt": "2026-08-31T20:56:58.717Z",
-      "ageDays": 82,
+      "ageDays": 83,
       "category": "aerospace",
       "score": 0,
       "id": "[\"Hermeus\",\"Lever\",\"https://jobs.lever.co/hermeus/2cbb75f7-a040-47b2-a442-d9cc1faedb11\",\"Propulsion Component Engineering Intern - Spring 2027\",\"Los Angeles, CA\"]",
       "term": "2027",
       "firstSeenAt": "2026-09-04T23:35:23.488Z",
-      "lastSeenAt": "2026-11-21T18:47:04.616Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastSeenAt": "2026-11-22T19:06:48.457Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "open",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -94,14 +94,14 @@
       "url": "https://jobs.lever.co/hermeus/6b65768c-a8b2-4c77-8d5f-f407e32bb878",
       "source": "Lever",
       "postedAt": "2026-09-02T00:50:49.999Z",
-      "ageDays": 81,
+      "ageDays": 82,
       "category": "aerospace",
       "score": 0,
       "id": "[\"Hermeus\",\"Lever\",\"https://jobs.lever.co/hermeus/6b65768c-a8b2-4c77-8d5f-f407e32bb878\",\"Structures Engineering Intern - Spring/Summer/Fall 2027\",\"Los Angeles, CA\"]",
       "term": "2027",
       "firstSeenAt": "2026-09-04T23:35:23.488Z",
-      "lastSeenAt": "2026-11-21T18:47:04.616Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastSeenAt": "2026-11-22T19:06:48.457Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "open",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -121,8 +121,8 @@
       "id": "[\"Anduril\",\"Greenhouse\",\"https://boards.greenhouse.io/andurilindustries/jobs/5153218007?gh_jid=5153218007\",\"2027 Manufacturing Engineer Intern\",\"Atlanta, Georgia, United States; Boston, Massachusetts, United States; Broomfield, Colorado, United States; Colorado Springs, Colorado, United States; Costa Mesa, California, United States; Fort Collins, Colorado, United States; Irvine, California, United States; Seattle, Washington, United States\"]",
       "term": "2027",
       "firstSeenAt": "2026-09-04T23:40:29.290Z",
-      "lastSeenAt": "2026-11-21T18:47:04.616Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastSeenAt": "2026-11-22T19:06:48.457Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "open",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -142,8 +142,8 @@
       "id": "[\"Anduril\",\"Greenhouse\",\"https://boards.greenhouse.io/andurilindustries/jobs/5153187007?gh_jid=5153187007\",\"2027 Mechanical Engineer Intern\",\"Atlanta, Georgia, United States; Boston, Massachusetts, United States; Broomfield, Colorado, United States; Colorado Springs, Colorado, United States; Costa Mesa, California, United States; Fort Collins, Colorado, United States; Irvine, California, United States; Reston, Virginia, United States; Seattle, Washington, United States\"]",
       "term": "2027",
       "firstSeenAt": "2026-09-04T23:40:29.290Z",
-      "lastSeenAt": "2026-11-21T18:47:04.616Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastSeenAt": "2026-11-22T19:06:48.457Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "open",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -164,7 +164,7 @@
       "term": "unspecified",
       "firstSeenAt": "2026-09-04T23:55:37.597Z",
       "lastSeenAt": "2026-09-08T16:01:07.954Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "unverified",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -184,8 +184,8 @@
       "id": "[\"General Matter\",\"Greenhouse\",\"https://job-boards.greenhouse.io/generalmatter/jobs/5376060008\",\"Summer 2027 Internship - Manufacturing Engineering\",\"Los Angeles, CA\"]",
       "term": "2027",
       "firstSeenAt": "2026-09-04T23:55:37.597Z",
-      "lastSeenAt": "2026-11-21T18:47:04.616Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastSeenAt": "2026-11-22T19:06:48.457Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "open",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -268,8 +268,8 @@
       "id": "[\"NVIDIA\",\"Workday\",\"https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/NVIDIA-2027-Internships--Autonomous-Vehicles-and-Robotics_JR2023496\",\"NVIDIA 2027 Internships: Autonomous Vehicles and Robotics\",\"US, CA, Santa Clara\"]",
       "term": "2027",
       "firstSeenAt": "2026-09-05T00:19:36.240Z",
-      "lastSeenAt": "2026-11-21T18:47:04.616Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastSeenAt": "2026-11-22T19:06:48.457Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "open",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -290,7 +290,7 @@
       "term": "2027",
       "firstSeenAt": "2026-09-05T00:19:36.240Z",
       "lastSeenAt": "2026-09-11T15:51:56.160Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "unverified",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -310,8 +310,8 @@
       "id": "[\"Applied Materials\",\"Workday\",\"https://amat.wd1.myworkdayjobs.com/en-US/External/job/Santa-ClaraCA/Summer-2027-Industrial-Engineering-Intern--Bachelor-s--Santa-Clara--CA-_R2626710\",\"Summer 2027 Industrial Engineering Intern- Bachelor's (Santa Clara, CA)\",\"Santa Clara,CA\"]",
       "term": "2027",
       "firstSeenAt": "2026-09-05T00:19:36.240Z",
-      "lastSeenAt": "2026-11-21T18:47:04.616Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastSeenAt": "2026-11-22T19:06:48.457Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "open",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -332,7 +332,7 @@
       "term": "other",
       "firstSeenAt": "2026-09-05T00:19:36.240Z",
       "lastSeenAt": "2026-10-26T18:17:18.816Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "unverified",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -352,8 +352,8 @@
       "id": "[\"Intuitive Surgical\",\"SmartRecruiters\",\"https://jobs.smartrecruiters.com/Intuitive/744000147091674\",\"Mechanical Engineering Intern\",\"Sunnyvale, CA, United States\"]",
       "term": "unspecified",
       "firstSeenAt": "2026-09-05T00:19:36.240Z",
-      "lastSeenAt": "2026-11-21T18:47:04.616Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastSeenAt": "2026-11-22T19:06:48.457Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "open",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -373,8 +373,8 @@
       "id": "[\"Intuitive Surgical\",\"SmartRecruiters\",\"https://jobs.smartrecruiters.com/Intuitive/744000147092239\",\"Manufacturing/Equipment/Supplier Engineering Intern (Mechanical or Biomedical Engineering Majors)\",\"Sunnyvale, CA, United States\"]",
       "term": "unspecified",
       "firstSeenAt": "2026-09-05T00:19:36.240Z",
-      "lastSeenAt": "2026-11-21T18:47:04.616Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastSeenAt": "2026-11-22T19:06:48.457Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "open",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -388,14 +388,14 @@
       "url": "https://jobs.lever.co/hermeus/5f6a6e79-9836-4c33-b40b-a2bb6c27bd06",
       "source": "Lever",
       "postedAt": "2026-09-02T14:59:45.814Z",
-      "ageDays": 80,
+      "ageDays": 81,
       "category": "manufacturing",
       "score": 2,
       "id": "[\"Hermeus\",\"Lever\",\"https://jobs.lever.co/hermeus/5f6a6e79-9836-4c33-b40b-a2bb6c27bd06\",\"Manufacturing Engineering Intern - Spring/Summer/Fall 2027\",\"Los Angeles, CA\"]",
       "term": "2027",
       "firstSeenAt": "2026-09-09T15:55:34.731Z",
-      "lastSeenAt": "2026-11-21T18:47:04.616Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastSeenAt": "2026-11-22T19:06:48.457Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "open",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -458,7 +458,7 @@
       "term": "2027",
       "firstSeenAt": "2026-09-09T15:55:34.731Z",
       "lastSeenAt": "2026-09-09T15:55:34.731Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "unverified",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -479,7 +479,7 @@
       "term": "unspecified",
       "firstSeenAt": "2026-09-10T15:51:26.829Z",
       "lastSeenAt": "2026-11-03T19:06:33.278Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "unverified",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -520,8 +520,8 @@
       "id": "[\"Rocket Lab\",\"Greenhouse\",\"https://job-boards.greenhouse.io/rocketlab/jobs/7984600003\",\"Additive Manufacturing Intern Summer 2027\",\"Long Beach, CA\"]",
       "term": "2027",
       "firstSeenAt": "2026-09-10T15:51:26.829Z",
-      "lastSeenAt": "2026-11-21T18:47:04.616Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastSeenAt": "2026-11-22T19:06:48.457Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "open",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -646,8 +646,8 @@
       "id": "[\"Rocket Lab\",\"Greenhouse\",\"https://job-boards.greenhouse.io/rocketlab/jobs/7991448003\",\"Mechanical Engineering Intern Summer 2027\",\"Long Beach, CA\"]",
       "term": "2027",
       "firstSeenAt": "2026-09-14T17:40:51.070Z",
-      "lastSeenAt": "2026-11-21T18:47:04.616Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastSeenAt": "2026-11-22T19:06:48.457Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "open",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -668,7 +668,7 @@
       "term": "unspecified",
       "firstSeenAt": "2026-09-15T16:14:03.068Z",
       "lastSeenAt": "2026-09-21T17:52:19.635Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "unverified",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -689,7 +689,7 @@
       "term": "unspecified",
       "firstSeenAt": "2026-09-15T16:14:03.068Z",
       "lastSeenAt": "2026-11-02T21:29:16.667Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "unverified",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -709,8 +709,8 @@
       "id": "[\"Anduril\",\"Greenhouse\",\"https://boards.greenhouse.io/andurilindustries/jobs/5236587007?gh_jid=5236587007\",\"Winter 2027 Propulsion Engineer Co-op\",\"Costa Mesa, California, United States\"]",
       "term": "2027",
       "firstSeenAt": "2026-09-16T16:09:17.373Z",
-      "lastSeenAt": "2026-11-21T18:47:04.616Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastSeenAt": "2026-11-22T19:06:48.457Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "open",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -730,8 +730,8 @@
       "id": "[\"Rocket Lab\",\"Greenhouse\",\"https://job-boards.greenhouse.io/rocketlab/jobs/7984943003\",\"Manufacturing Engineering Intern Spring 2027\",\"Long Beach, CA\"]",
       "term": "2027",
       "firstSeenAt": "2026-09-17T16:16:04.190Z",
-      "lastSeenAt": "2026-11-21T18:47:04.616Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastSeenAt": "2026-11-22T19:06:48.457Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "open",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -751,8 +751,8 @@
       "id": "[\"Rocket Lab\",\"Greenhouse\",\"https://job-boards.greenhouse.io/rocketlab/jobs/7984564003\",\"Manufacturing Engineering Intern Summer 2027\",\"Long Beach, CA\"]",
       "term": "2027",
       "firstSeenAt": "2026-09-17T16:16:04.190Z",
-      "lastSeenAt": "2026-11-21T18:47:04.616Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastSeenAt": "2026-11-22T19:06:48.457Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "open",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -772,8 +772,8 @@
       "id": "[\"Rocket Lab\",\"Greenhouse\",\"https://job-boards.greenhouse.io/rocketlab/jobs/7986824003\",\"Propulsion Analyst Intern Spring 2027\",\"Long Beach, CA\"]",
       "term": "2027",
       "firstSeenAt": "2026-09-17T16:16:04.190Z",
-      "lastSeenAt": "2026-11-21T18:47:04.616Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastSeenAt": "2026-11-22T19:06:48.457Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "open",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -793,8 +793,8 @@
       "id": "[\"Rocket Lab\",\"Greenhouse\",\"https://job-boards.greenhouse.io/rocketlab/jobs/7986820003\",\"Propulsion Analyst Intern Summer 2027\",\"Long Beach, CA\"]",
       "term": "2027",
       "firstSeenAt": "2026-09-17T16:16:04.190Z",
-      "lastSeenAt": "2026-11-21T18:47:04.616Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastSeenAt": "2026-11-22T19:06:48.457Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "open",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -814,8 +814,8 @@
       "id": "[\"Rocket Lab\",\"Greenhouse\",\"https://job-boards.greenhouse.io/rocketlab/jobs/7987042003\",\"Test Engineering Intern - Manufacturing Spring 2027\",\"Long Beach, CA\"]",
       "term": "2027",
       "firstSeenAt": "2026-09-18T15:51:26.938Z",
-      "lastSeenAt": "2026-11-21T18:47:04.616Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastSeenAt": "2026-11-22T19:06:48.457Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "open",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -898,8 +898,8 @@
       "id": "[\"IMEG\",\"Workday\",\"https://imeg.wd1.myworkdayjobs.com/en-US/Imeg_Careers/job/Anaheim-CA/Mechanical-Engineering-Intern---Anaheim--CA_R-16751\",\"Mechanical Engineering Intern | Anaheim, CA\",\"Anaheim, CA\"]",
       "term": "unspecified",
       "firstSeenAt": "2026-09-22T16:17:09.231Z",
-      "lastSeenAt": "2026-11-21T18:47:04.616Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastSeenAt": "2026-11-22T19:06:48.457Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "open",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -920,7 +920,7 @@
       "term": "2027",
       "firstSeenAt": "2026-09-23T16:06:46.851Z",
       "lastSeenAt": "2026-09-25T16:31:49.505Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "unverified",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -941,7 +941,7 @@
       "term": "unspecified",
       "firstSeenAt": "2026-09-24T16:31:16.402Z",
       "lastSeenAt": "2026-10-04T16:30:42.488Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "unverified",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -962,7 +962,7 @@
       "term": "2027",
       "firstSeenAt": "2026-09-28T19:16:43.182Z",
       "lastSeenAt": "2026-09-30T17:38:12.707Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "unverified",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -983,7 +983,7 @@
       "term": "2027",
       "firstSeenAt": "2026-09-30T17:38:12.707Z",
       "lastSeenAt": "2026-11-10T19:20:58.480Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "unverified",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -1004,7 +1004,7 @@
       "term": "2027",
       "firstSeenAt": "2026-09-30T17:38:12.707Z",
       "lastSeenAt": "2026-09-30T17:38:12.707Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "unverified",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -1024,8 +1024,8 @@
       "id": "[\"Rivian\",\"Rivian Careers API\",\"https://careers.rivian.com/jobs/33872\",\"Engineering Intern - Powertrain Testing (Spring 2027 Co-Op)\",\"Tustin, California\"]",
       "term": "2027",
       "firstSeenAt": "2026-10-06T17:56:13.856Z",
-      "lastSeenAt": "2026-11-21T18:47:04.616Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastSeenAt": "2026-11-22T19:06:48.457Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "open",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -1045,8 +1045,8 @@
       "id": "[\"Etched\",\"Ashby\",\"https://jobs.ashbyhq.com/Etched/f05e3218-5ec7-41d1-bc99-bb7014422229\",\"Mechanical / Thermal Intern\",\"San Jose\"]",
       "term": "unspecified",
       "firstSeenAt": "2026-10-06T17:56:13.856Z",
-      "lastSeenAt": "2026-11-21T18:47:04.616Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastSeenAt": "2026-11-22T19:06:48.457Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "open",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -1067,7 +1067,7 @@
       "term": "2027",
       "firstSeenAt": "2026-10-07T18:27:57.146Z",
       "lastSeenAt": "2026-10-08T18:28:11.708Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "unverified",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -1088,7 +1088,7 @@
       "term": "2027",
       "firstSeenAt": "2026-10-08T18:28:11.708Z",
       "lastSeenAt": "2026-10-12T20:56:48.460Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "unverified",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -1108,8 +1108,8 @@
       "id": "[\"Applied Materials\",\"Workday\",\"https://amat.wd1.myworkdayjobs.com/en-US/External/job/Santa-ClaraCA/XMLNAME-2027-Summer-Intern---Mechanical-Engineer---BS-MS-Degree---Santa-Clara-_R2629426\",\"2027 Summer Intern - Mechanical Engineer - BS/MS Degree, (Santa Clara)\",\"Santa Clara,CA\"]",
       "term": "2027",
       "firstSeenAt": "2026-10-10T17:01:40.776Z",
-      "lastSeenAt": "2026-11-21T18:47:04.616Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastSeenAt": "2026-11-22T19:06:48.457Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "open",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -1129,8 +1129,8 @@
       "id": "[\"Applied Materials\",\"Workday\",\"https://amat.wd1.myworkdayjobs.com/en-US/External/job/Santa-ClaraCA/XMLNAME-2027-Summer-Intern---Mechanical-Engineer---PhD---Santa-Clara-_R2629427\",\"2027 Summer Intern - Mechanical Engineer - PhD, (Santa Clara)\",\"Santa Clara,CA\"]",
       "term": "2027",
       "firstSeenAt": "2026-10-10T17:01:40.776Z",
-      "lastSeenAt": "2026-11-21T18:47:04.616Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastSeenAt": "2026-11-22T19:06:48.457Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "open",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -1151,7 +1151,7 @@
       "term": "2027",
       "firstSeenAt": "2026-10-11T17:24:16.467Z",
       "lastSeenAt": "2026-11-10T19:20:58.480Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "unverified",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -1172,7 +1172,7 @@
       "term": "2027",
       "firstSeenAt": "2026-10-12T20:56:48.460Z",
       "lastSeenAt": "2026-10-14T16:32:12.441Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "unverified",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -1192,8 +1192,8 @@
       "id": "[\"Bosch\",\"SmartRecruiters\",\"https://jobs.smartrecruiters.com/BoschGroup/744000154911489\",\"Robotics Research Intern\",\"Sunnyvale, CA, United States\"]",
       "term": "unspecified",
       "firstSeenAt": "2026-10-12T20:56:48.460Z",
-      "lastSeenAt": "2026-11-21T18:47:04.616Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastSeenAt": "2026-11-22T19:06:48.457Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "open",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -1256,7 +1256,7 @@
       "term": "2027",
       "firstSeenAt": "2026-10-26T18:17:18.816Z",
       "lastSeenAt": "2026-11-10T19:20:58.480Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "unverified",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -1277,7 +1277,7 @@
       "term": "2027",
       "firstSeenAt": "2026-10-26T18:17:18.816Z",
       "lastSeenAt": "2026-10-30T17:45:19.532Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "unverified",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -1297,8 +1297,8 @@
       "id": "[\"Intuitive Surgical\",\"SmartRecruiters\",\"https://jobs.smartrecruiters.com/Intuitive/744000158313717\",\"Robotics Engineering Intern\",\"Sunnyvale, CA, United States\"]",
       "term": "unspecified",
       "firstSeenAt": "2026-10-28T17:55:54.837Z",
-      "lastSeenAt": "2026-11-21T18:47:04.616Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastSeenAt": "2026-11-22T19:06:48.457Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "open",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -1319,7 +1319,7 @@
       "term": "2027",
       "firstSeenAt": "2026-10-30T17:45:19.532Z",
       "lastSeenAt": "2026-11-08T17:41:52.575Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "unverified",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -1340,7 +1340,7 @@
       "term": "2027",
       "firstSeenAt": "2026-10-30T17:45:19.532Z",
       "lastSeenAt": "2026-11-02T21:29:16.667Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "unverified",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -1360,8 +1360,8 @@
       "id": "[\"RTX\",\"Workday\",\"https://globalhr.wd5.myworkdayjobs.com/en-US/REC_RTX_Ext_Gateway/job/US-CA-EL-SEGUNDO-E01--2000-E-El-Segundo-Blvd--BLDG-E01/Mechanical-Engineering-Intern--Summer-2027-_01883293\",\"Mechanical Engineering Intern (Summer 2027)\",\"US-CA-EL SEGUNDO-E01 ~ 2000 E El Segundo Blvd ~ BLDG E01\"]",
       "term": "2027",
       "firstSeenAt": "2026-10-30T17:45:19.532Z",
-      "lastSeenAt": "2026-11-21T18:47:04.616Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastSeenAt": "2026-11-22T19:06:48.457Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "open",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -1381,8 +1381,8 @@
       "id": "[\"NVIDIA\",\"Workday\",\"https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/VLSI-CAD-Timing-Intern--Applied-AI---Summer-2027_JR2026799\",\"VLSI CAD Timing Intern, Applied AI - Summer 2027\",\"US, CA, Santa Clara\"]",
       "term": "2027",
       "firstSeenAt": "2026-10-30T17:45:19.532Z",
-      "lastSeenAt": "2026-11-21T18:47:04.616Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastSeenAt": "2026-11-22T19:06:48.457Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "open",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -1396,14 +1396,14 @@
       "url": "https://jobs.lever.co/hermeus/943f51e4-5b26-432c-ae85-de5f43cadb86",
       "source": "Lever",
       "postedAt": "2026-07-23T23:21:38.983Z",
-      "ageDays": 121,
+      "ageDays": 122,
       "category": "aerospace",
       "score": 0,
       "id": "[\"Hermeus\",\"Lever\",\"https://jobs.lever.co/hermeus/943f51e4-5b26-432c-ae85-de5f43cadb86\",\"Propulsion Engineering Intern - Spring/Fall 2027\",\"Los Angeles, CA\"]",
       "term": "2027",
       "firstSeenAt": "2026-10-30T17:45:19.532Z",
-      "lastSeenAt": "2026-11-21T18:47:04.616Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastSeenAt": "2026-11-22T19:06:48.457Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "open",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -1423,8 +1423,8 @@
       "id": "[\"Anduril\",\"Greenhouse\",\"https://boards.greenhouse.io/andurilindustries/jobs/5280611007?gh_jid=5280611007\",\"Fall 2027 Manufacturing Engineer Co-op\",\"Ashville, Ohio, United States; Quincy, Massachusetts, United States; Santa Ana, California, United States\"]",
       "term": "2027",
       "firstSeenAt": "2026-10-31T16:53:22.941Z",
-      "lastSeenAt": "2026-11-21T18:47:04.616Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastSeenAt": "2026-11-22T19:06:48.457Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "open",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -1444,8 +1444,8 @@
       "id": "[\"Applied Materials\",\"Workday\",\"https://amat.wd1.myworkdayjobs.com/en-US/External/job/Santa-ClaraCA/Summer-2027-Mechanical-Engineer-Intern--Bachelor-s-Master-s--Santa-Clara--CA-_R2627737\",\"Summer 2027 Mechanical Engineer Intern- Bachelor's/Master's (Santa Clara, CA)\",\"Santa Clara,CA\"]",
       "term": "2027",
       "firstSeenAt": "2026-10-31T16:53:22.941Z",
-      "lastSeenAt": "2026-11-21T18:47:04.616Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastSeenAt": "2026-11-22T19:06:48.457Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "open",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -1466,7 +1466,7 @@
       "term": "unspecified",
       "firstSeenAt": "2026-11-03T19:06:33.278Z",
       "lastSeenAt": "2026-11-17T20:30:53.494Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "unverified",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -1487,7 +1487,7 @@
       "term": "2027",
       "firstSeenAt": "2026-11-06T18:58:29.230Z",
       "lastSeenAt": "2026-11-10T19:20:58.480Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "unverified",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -1528,8 +1528,8 @@
       "id": "[\"RTX\",\"Workday\",\"https://globalhr.wd5.myworkdayjobs.com/en-US/REC_RTX_Ext_Gateway/job/US-CA-EL-SEGUNDO-E02--2002-E-El-Segundo-Blvd--BLDG-E02/Mechanical-Engineer-Intern-Summer-2027--Onsite-_01890290\",\"Mechanical Engineer Intern Summer 2027 (Onsite)\",\"US-CA-EL SEGUNDO-E02 ~ 2002 E El Segundo Blvd ~ BLDG E02\"]",
       "term": "2027",
       "firstSeenAt": "2026-11-20T19:40:59.927Z",
-      "lastSeenAt": "2026-11-21T18:47:04.616Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastSeenAt": "2026-11-22T19:06:48.457Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "open",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -1549,8 +1549,8 @@
       "id": "[\"NVIDIA\",\"Workday\",\"https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Cost-Accountant-Intern--Global-Operations-and-Manufacturing---Summer-2027_JR2028934-1\",\"Cost Accountant Intern, Global Operations and Manufacturing - Summer 2027\",\"US, CA, Santa Clara\"]",
       "term": "2027",
       "firstSeenAt": "2026-11-20T19:40:59.927Z",
-      "lastSeenAt": "2026-11-21T18:47:04.616Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastSeenAt": "2026-11-22T19:06:48.457Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "open",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -1564,14 +1564,14 @@
       "url": "https://jobs.lever.co/hermeus/1bc5c858-1b04-4093-80a0-2ba3491afc60",
       "source": "Lever",
       "postedAt": "2026-08-31T15:21:07.823Z",
-      "ageDays": 82,
+      "ageDays": 83,
       "category": "mechanical_design",
       "score": 5,
       "id": "[\"Hermeus\",\"Lever\",\"https://jobs.lever.co/hermeus/1bc5c858-1b04-4093-80a0-2ba3491afc60\",\"Mechanical Engineering Intern  - Fall 2027\",\"Los Angeles, CA\"]",
       "term": "2027",
       "firstSeenAt": "2026-11-20T19:40:59.927Z",
-      "lastSeenAt": "2026-11-21T18:47:04.616Z",
-      "lastCheckedAt": "2026-11-21T18:47:04.616Z",
+      "lastSeenAt": "2026-11-22T19:06:48.457Z",
+      "lastCheckedAt": "2026-11-22T19:06:48.457Z",
       "status": "open",
       "missingChecks": 0,
       "lastMissingDate": null,
@@ -1582,7 +1582,7 @@
     {
       "company": "3M",
       "source": "Workday",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.021Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Legacy tenant guess; needs a verified host and external career-site name."
@@ -1590,7 +1590,7 @@
     {
       "company": "Abbott",
       "source": "Workday",
-      "checkedAt": "2026-11-21T18:47:04.616Z",
+      "checkedAt": "2026-11-22T19:06:48.457Z",
       "status": "partial",
       "count": 0,
       "detail": "Best-effort source; absence does not establish closure."
@@ -1598,7 +1598,7 @@
     {
       "company": "AeroVironment",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.022Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -1606,7 +1606,7 @@
     {
       "company": "Agility Robotics",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.022Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -1614,7 +1614,7 @@
     {
       "company": "Air Products",
       "source": "Workday",
-      "checkedAt": "2026-11-21T18:45:24.367Z",
+      "checkedAt": "2026-11-22T19:05:20.418Z",
       "status": "partial",
       "count": 0,
       "detail": "Best-effort source; absence does not establish closure."
@@ -1622,7 +1622,7 @@
     {
       "company": "AMD",
       "source": "iCIMS Careers API",
-      "checkedAt": "2026-11-21T18:41:18.750Z",
+      "checkedAt": "2026-11-22T19:01:00.123Z",
       "status": "partial",
       "count": 0,
       "detail": "Best-effort source; absence does not establish closure."
@@ -1630,7 +1630,7 @@
     {
       "company": "Anduril",
       "source": "Greenhouse",
-      "checkedAt": "2026-11-21T18:39:38.508Z",
+      "checkedAt": "2026-11-22T18:59:22.297Z",
       "status": "ok",
       "count": 4,
       "detail": "Complete feed parsed."
@@ -1638,7 +1638,7 @@
     {
       "company": "Apple",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.022Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -1646,7 +1646,7 @@
     {
       "company": "Applied Materials",
       "source": "Workday",
-      "checkedAt": "2026-11-21T18:45:25.502Z",
+      "checkedAt": "2026-11-22T19:05:23.978Z",
       "status": "partial",
       "count": 4,
       "detail": "Best-effort source; absence does not establish closure."
@@ -1654,7 +1654,7 @@
     {
       "company": "Archer Aviation",
       "source": "Greenhouse",
-      "checkedAt": "2026-11-21T18:43:09.452Z",
+      "checkedAt": "2026-11-22T19:02:57.509Z",
       "status": "ok",
       "count": 0,
       "detail": "Complete feed parsed."
@@ -1662,7 +1662,7 @@
     {
       "company": "ASML",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.022Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -1670,7 +1670,7 @@
     {
       "company": "Atlas Copco",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.022Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -1678,7 +1678,7 @@
     {
       "company": "BAE Systems",
       "source": "Workday",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.021Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Legacy tenant guess; needs a verified host and external career-site name."
@@ -1686,7 +1686,7 @@
     {
       "company": "Bell Flight",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.022Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -1694,7 +1694,7 @@
     {
       "company": "Blue Origin",
       "source": "Workday",
-      "checkedAt": "2026-11-21T18:42:55.807Z",
+      "checkedAt": "2026-11-22T19:02:44.921Z",
       "status": "partial",
       "count": 0,
       "detail": "Best-effort source; absence does not establish closure."
@@ -1702,7 +1702,7 @@
     {
       "company": "BMW",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.021Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -1710,7 +1710,7 @@
     {
       "company": "Boeing",
       "source": "Workday",
-      "checkedAt": "2026-11-21T18:41:20.719Z",
+      "checkedAt": "2026-11-22T19:01:03.576Z",
       "status": "partial",
       "count": 0,
       "detail": "Best-effort source; absence does not establish closure."
@@ -1718,7 +1718,7 @@
     {
       "company": "Boom Supersonic",
       "source": "Rippling",
-      "checkedAt": "2026-11-21T18:43:06.373Z",
+      "checkedAt": "2026-11-22T19:02:54.232Z",
       "status": "partial",
       "count": 0,
       "detail": "Best-effort source; absence does not establish closure."
@@ -1726,7 +1726,7 @@
     {
       "company": "Bosch",
       "source": "SmartRecruiters",
-      "checkedAt": "2026-11-21T18:40:05.178Z",
+      "checkedAt": "2026-11-22T18:59:46.716Z",
       "status": "ok",
       "count": 1,
       "detail": "Complete feed parsed."
@@ -1734,7 +1734,7 @@
     {
       "company": "Boston Dynamics",
       "source": "Workday",
-      "checkedAt": "2026-11-21T18:43:15.803Z",
+      "checkedAt": "2026-11-22T19:03:04.054Z",
       "status": "partial",
       "count": 0,
       "detail": "Best-effort source; absence does not establish closure."
@@ -1742,7 +1742,7 @@
     {
       "company": "Boston Scientific",
       "source": "SuccessFactors",
-      "checkedAt": "2026-11-21T18:43:01.238Z",
+      "checkedAt": "2026-11-22T19:02:51.264Z",
       "status": "partial",
       "count": 0,
       "detail": "Best-effort source; absence does not establish closure."
@@ -1750,7 +1750,7 @@
     {
       "company": "Carrier",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.022Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -1758,7 +1758,7 @@
     {
       "company": "Caterpillar",
       "source": "Workday",
-      "checkedAt": "2026-11-21T18:42:42.836Z",
+      "checkedAt": "2026-11-22T19:02:21.229Z",
       "status": "partial",
       "count": 0,
       "detail": "Best-effort source; absence does not establish closure."
@@ -1766,7 +1766,7 @@
     {
       "company": "CNH Industrial",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.021Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -1774,7 +1774,7 @@
     {
       "company": "Collins Aerospace",
       "source": "Shared employer board",
-      "checkedAt": "2026-11-21T18:41:21.096Z",
+      "checkedAt": "2026-11-22T19:01:03.484Z",
       "status": "covered",
       "count": 0,
       "detail": "Tracked under RTX (partial); shared results are not duplicated or relabeled as this subsidiary."
@@ -1782,7 +1782,7 @@
     {
       "company": "Cummins",
       "source": "Greenhouse",
-      "checkedAt": "2026-11-21T18:41:47.742Z",
+      "checkedAt": "2026-11-22T19:01:27.991Z",
       "status": "failed",
       "count": 0,
       "detail": "HTTP 404; previous listings retained."
@@ -1790,7 +1790,7 @@
     {
       "company": "Danaher",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.022Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -1798,7 +1798,7 @@
     {
       "company": "Dyson",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.021Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -1806,7 +1806,7 @@
     {
       "company": "Eaton",
       "source": "Workday",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.021Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Legacy tenant guess; needs a verified host and external career-site name."
@@ -1814,7 +1814,7 @@
     {
       "company": "Edwards Lifesciences",
       "source": "Workday",
-      "checkedAt": "2026-11-21T18:44:51.573Z",
+      "checkedAt": "2026-11-22T19:04:45.426Z",
       "status": "partial",
       "count": 0,
       "detail": "Best-effort source; absence does not establish closure."
@@ -1822,7 +1822,7 @@
     {
       "company": "Emerson",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.021Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -1830,7 +1830,7 @@
     {
       "company": "Etched",
       "source": "Ashby",
-      "checkedAt": "2026-11-21T18:45:26.221Z",
+      "checkedAt": "2026-11-22T19:05:24.714Z",
       "status": "ok",
       "count": 1,
       "detail": "Complete feed parsed."
@@ -1838,7 +1838,7 @@
     {
       "company": "Figure AI",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.022Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -1846,7 +1846,7 @@
     {
       "company": "Ford",
       "source": "Greenhouse",
-      "checkedAt": "2026-11-21T18:42:12.498Z",
+      "checkedAt": "2026-11-22T19:01:57.784Z",
       "status": "failed",
       "count": 0,
       "detail": "HTTP 404; previous listings retained."
@@ -1854,7 +1854,7 @@
     {
       "company": "Ford",
       "source": "Lever",
-      "checkedAt": "2026-11-21T18:42:12.926Z",
+      "checkedAt": "2026-11-22T19:01:58.041Z",
       "status": "failed",
       "count": 0,
       "detail": "HTTP 404; previous listings retained."
@@ -1862,7 +1862,7 @@
     {
       "company": "Garmin",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.022Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -1870,7 +1870,7 @@
     {
       "company": "GE Aerospace",
       "source": "Workday",
-      "checkedAt": "2026-11-21T18:41:47.225Z",
+      "checkedAt": "2026-11-22T19:01:27.429Z",
       "status": "partial",
       "count": 0,
       "detail": "Best-effort source; absence does not establish closure."
@@ -1878,7 +1878,7 @@
     {
       "company": "General Matter",
       "source": "Greenhouse",
-      "checkedAt": "2026-11-21T18:45:25.767Z",
+      "checkedAt": "2026-11-22T19:05:24.215Z",
       "status": "ok",
       "count": 1,
       "detail": "Complete feed parsed."
@@ -1886,7 +1886,7 @@
     {
       "company": "General Motors",
       "source": "Workday",
-      "checkedAt": "2026-11-21T18:43:03.753Z",
+      "checkedAt": "2026-11-22T19:02:52.106Z",
       "status": "partial",
       "count": 0,
       "detail": "Best-effort source; absence does not establish closure."
@@ -1894,7 +1894,7 @@
     {
       "company": "GlobalFoundries",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.022Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -1902,7 +1902,7 @@
     {
       "company": "Google",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.022Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -1910,7 +1910,7 @@
     {
       "company": "Hermeus",
       "source": "Lever",
-      "checkedAt": "2026-11-21T18:43:05.966Z",
+      "checkedAt": "2026-11-22T19:02:53.850Z",
       "status": "ok",
       "count": 5,
       "detail": "Complete feed parsed."
@@ -1918,7 +1918,7 @@
     {
       "company": "Honda",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.021Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -1926,7 +1926,7 @@
     {
       "company": "Honeywell",
       "source": "Greenhouse",
-      "checkedAt": "2026-11-21T18:41:47.486Z",
+      "checkedAt": "2026-11-22T19:01:27.746Z",
       "status": "failed",
       "count": 0,
       "detail": "HTTP 404; previous listings retained."
@@ -1934,7 +1934,7 @@
     {
       "company": "Honeywell Aerospace",
       "source": "Greenhouse",
-      "checkedAt": "2026-11-21T18:43:04.052Z",
+      "checkedAt": "2026-11-22T19:02:52.403Z",
       "status": "failed",
       "count": 0,
       "detail": "HTTP 404; previous listings retained."
@@ -1942,7 +1942,7 @@
     {
       "company": "Hyundai",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.021Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -1950,7 +1950,7 @@
     {
       "company": "IMEG",
       "source": "Workday",
-      "checkedAt": "2026-11-21T18:45:35.998Z",
+      "checkedAt": "2026-11-22T19:05:34.235Z",
       "status": "partial",
       "count": 1,
       "detail": "Best-effort source; absence does not establish closure."
@@ -1958,7 +1958,7 @@
     {
       "company": "Intel",
       "source": "Workday",
-      "checkedAt": "2026-11-21T18:41:17.830Z",
+      "checkedAt": "2026-11-22T19:00:58.717Z",
       "status": "partial",
       "count": 0,
       "detail": "Best-effort source; absence does not establish closure."
@@ -1966,7 +1966,7 @@
     {
       "company": "Intrinsic",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.022Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -1974,7 +1974,7 @@
     {
       "company": "Intuitive Surgical",
       "source": "SmartRecruiters",
-      "checkedAt": "2026-11-21T18:44:57.686Z",
+      "checkedAt": "2026-11-22T19:04:52.031Z",
       "status": "ok",
       "count": 3,
       "detail": "Complete feed parsed."
@@ -1982,7 +1982,7 @@
     {
       "company": "J&J",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.022Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -1990,7 +1990,7 @@
     {
       "company": "Joby Aviation",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.022Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -1998,7 +1998,7 @@
     {
       "company": "John Deere",
       "source": "SuccessFactors",
-      "checkedAt": "2026-11-21T18:39:36.711Z",
+      "checkedAt": "2026-11-22T18:59:19.658Z",
       "status": "partial",
       "count": 0,
       "detail": "Best-effort source; absence does not establish closure."
@@ -2006,7 +2006,7 @@
     {
       "company": "Johnson Controls",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.021Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -2014,7 +2014,7 @@
     {
       "company": "KLA",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.022Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -2022,7 +2022,7 @@
     {
       "company": "Komatsu",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.021Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -2030,7 +2030,7 @@
     {
       "company": "L3Harris",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.022Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -2038,7 +2038,7 @@
     {
       "company": "Lam Research",
       "source": "Greenhouse",
-      "checkedAt": "2026-11-21T18:43:03.804Z",
+      "checkedAt": "2026-11-22T19:02:52.155Z",
       "status": "failed",
       "count": 0,
       "detail": "HTTP 404; previous listings retained."
@@ -2046,7 +2046,7 @@
     {
       "company": "Lockheed Martin",
       "source": "Greenhouse",
-      "checkedAt": "2026-11-21T18:41:21.013Z",
+      "checkedAt": "2026-11-22T19:01:03.879Z",
       "status": "failed",
       "count": 0,
       "detail": "HTTP 404; previous listings retained."
@@ -2054,7 +2054,7 @@
     {
       "company": "Lucid",
       "source": "Greenhouse",
-      "checkedAt": "2026-11-21T18:42:43.181Z",
+      "checkedAt": "2026-11-22T19:02:21.673Z",
       "status": "ok",
       "count": 0,
       "detail": "Complete feed parsed."
@@ -2062,7 +2062,7 @@
     {
       "company": "Medtronic",
       "source": "Workday",
-      "checkedAt": "2026-11-21T18:44:10.077Z",
+      "checkedAt": "2026-11-22T19:03:50.956Z",
       "status": "partial",
       "count": 0,
       "detail": "Best-effort source; absence does not establish closure."
@@ -2070,7 +2070,7 @@
     {
       "company": "Mercedes-Benz",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.021Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -2078,7 +2078,7 @@
     {
       "company": "Meta",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.022Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -2086,7 +2086,7 @@
     {
       "company": "Micron",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.022Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -2094,7 +2094,7 @@
     {
       "company": "Moog",
       "source": "Workday",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.021Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Legacy tenant guess; needs a verified host and external career-site name."
@@ -2102,7 +2102,7 @@
     {
       "company": "Northrop Grumman",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.021Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -2110,7 +2110,7 @@
     {
       "company": "NVIDIA",
       "source": "Workday",
-      "checkedAt": "2026-11-21T18:42:12.476Z",
+      "checkedAt": "2026-11-22T19:01:57.735Z",
       "status": "partial",
       "count": 3,
       "detail": "Best-effort source; absence does not establish closure."
@@ -2118,7 +2118,7 @@
     {
       "company": "Overview Energy",
       "source": "Ashby",
-      "checkedAt": "2026-11-21T18:45:26.444Z",
+      "checkedAt": "2026-11-22T19:05:24.883Z",
       "status": "ok",
       "count": 0,
       "detail": "Complete feed parsed."
@@ -2126,7 +2126,7 @@
     {
       "company": "Parker Hannifin",
       "source": "Workday",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.022Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Legacy tenant guess; needs a verified host and external career-site name."
@@ -2134,7 +2134,7 @@
     {
       "company": "Polaris",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.021Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -2142,7 +2142,7 @@
     {
       "company": "Pratt & Whitney",
       "source": "Shared employer board",
-      "checkedAt": "2026-11-21T18:41:21.096Z",
+      "checkedAt": "2026-11-22T19:01:03.484Z",
       "status": "covered",
       "count": 0,
       "detail": "Tracked under RTX (partial); shared results are not duplicated or relabeled as this subsidiary."
@@ -2150,7 +2150,7 @@
     {
       "company": "Qualcomm",
       "source": "Lever",
-      "checkedAt": "2026-11-21T18:41:19.467Z",
+      "checkedAt": "2026-11-22T19:01:02.747Z",
       "status": "failed",
       "count": 0,
       "detail": "HTTP 404; previous listings retained."
@@ -2158,7 +2158,7 @@
     {
       "company": "Raytheon",
       "source": "Shared employer board",
-      "checkedAt": "2026-11-21T18:41:21.096Z",
+      "checkedAt": "2026-11-22T19:01:03.484Z",
       "status": "covered",
       "count": 0,
       "detail": "Tracked under RTX (partial); shared results are not duplicated or relabeled as this subsidiary."
@@ -2166,7 +2166,7 @@
     {
       "company": "Relativity Space",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.022Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -2174,7 +2174,7 @@
     {
       "company": "Rivian",
       "source": "Rivian Careers API",
-      "checkedAt": "2026-11-21T18:39:29.746Z",
+      "checkedAt": "2026-11-22T18:59:12.178Z",
       "status": "partial",
       "count": 1,
       "detail": "Best-effort source; absence does not establish closure."
@@ -2182,7 +2182,7 @@
     {
       "company": "Rocket Lab",
       "source": "Greenhouse",
-      "checkedAt": "2026-11-21T18:43:09.407Z",
+      "checkedAt": "2026-11-22T19:02:57.291Z",
       "status": "ok",
       "count": 7,
       "detail": "Complete feed parsed."
@@ -2190,7 +2190,7 @@
     {
       "company": "Rockwell Automation",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.022Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -2198,7 +2198,7 @@
     {
       "company": "Rolls Royce",
       "source": "Workday",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.021Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Legacy tenant guess; needs a verified host and external career-site name."
@@ -2206,7 +2206,7 @@
     {
       "company": "RTX",
       "source": "Workday",
-      "checkedAt": "2026-11-21T18:41:21.096Z",
+      "checkedAt": "2026-11-22T19:01:03.484Z",
       "status": "partial",
       "count": 2,
       "detail": "Workday pagination stopped early or reached its cap; earlier pages retained."
@@ -2214,7 +2214,7 @@
     {
       "company": "Safran",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.022Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -2222,7 +2222,7 @@
     {
       "company": "Schneider Electric",
       "source": "Workday",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.021Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Legacy tenant guess; needs a verified host and external career-site name."
@@ -2230,7 +2230,7 @@
     {
       "company": "Siemens",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.021Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -2238,7 +2238,7 @@
     {
       "company": "Skydio",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.022Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -2246,7 +2246,7 @@
     {
       "company": "SpaceX",
       "source": "SpaceX Jobs JSON",
-      "checkedAt": "2026-11-21T18:39:32.094Z",
+      "checkedAt": "2026-11-22T18:59:14.608Z",
       "status": "failed",
       "count": 0,
       "detail": "Network, timeout, or response decoding failure; previous listings retained."
@@ -2254,7 +2254,7 @@
     {
       "company": "Spirit AeroSystems",
       "source": "iCIMS",
-      "checkedAt": "2026-11-21T18:43:08.692Z",
+      "checkedAt": "2026-11-22T19:02:56.632Z",
       "status": "partial",
       "count": 0,
       "detail": "Best-effort source; absence does not establish closure."
@@ -2262,7 +2262,7 @@
     {
       "company": "Stryker",
       "source": "Workday",
-      "checkedAt": "2026-11-21T18:44:32.797Z",
+      "checkedAt": "2026-11-22T19:04:27.141Z",
       "status": "partial",
       "count": 0,
       "detail": "Best-effort source; absence does not establish closure."
@@ -2270,7 +2270,7 @@
     {
       "company": "Tesla",
       "source": "Tesla Careers",
-      "checkedAt": "2026-11-21T18:39:28.890Z",
+      "checkedAt": "2026-11-22T18:59:11.417Z",
       "status": "failed",
       "count": 0,
       "detail": "HTTP 403; previous listings retained."
@@ -2278,7 +2278,7 @@
     {
       "company": "Textron",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.022Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -2286,7 +2286,7 @@
     {
       "company": "Tokyo Electron",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.022Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -2294,7 +2294,7 @@
     {
       "company": "Toyota",
       "source": "Workday",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.021Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Legacy tenant guess; needs a verified host and external career-site name."
@@ -2302,7 +2302,7 @@
     {
       "company": "Trane Technologies",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.022Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -2310,7 +2310,7 @@
     {
       "company": "TSMC",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.022Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -2318,7 +2318,7 @@
     {
       "company": "Virgin Galactic",
       "source": "SuccessFactors",
-      "checkedAt": "2026-11-21T18:43:08.208Z",
+      "checkedAt": "2026-11-22T19:02:56.308Z",
       "status": "partial",
       "count": 0,
       "detail": "Best-effort source; absence does not establish closure."
@@ -2326,7 +2326,7 @@
     {
       "company": "Volvo",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.021Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -2334,7 +2334,7 @@
     {
       "company": "Whirlpool",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.021Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -2342,7 +2342,7 @@
     {
       "company": "Zimmer Biomet",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.022Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
@@ -2350,7 +2350,7 @@
     {
       "company": "Zipline",
       "source": "None",
-      "checkedAt": "2026-11-21T18:39:28.589Z",
+      "checkedAt": "2026-11-22T18:59:11.022Z",
       "status": "unconfigured",
       "count": 0,
       "detail": "Target company; no scraper configured."
